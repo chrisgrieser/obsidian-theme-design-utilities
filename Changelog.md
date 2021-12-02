@@ -1,3 +1,6 @@
+- 2021-12-02	add cheatsheet command
+- 2021-12-02	add cheatsheets
+- 2021-12-02	release 0.10.0
 - 2021-12-02	merged the two emulation commands to one toggle command
 - 2021-12-02	release 0.9.0
 - 2021-12-02	description fixes
