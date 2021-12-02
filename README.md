@@ -10,6 +10,7 @@ SOme utilities and Quality-of-Life features for designers of [Obsidian](https://
 - [Features](#features)
 	- [Mobile Emulation](#mobile-emulation)
 	- [Permanent Notice](#permanent-notice)
+	- [Cheatsheets](#cheatsheets)
 - [Other Resources for Obsidian Theme Designers](#other-resources-for-obsidian-theme-designers)
 - [Installation](#installation)
 - [Contribute](#contribute)
@@ -24,6 +25,9 @@ Conveniently toggle emulation of the mobile version of Obsidian. This helps with
 
 ### Permanent Notice
 Post a notice (notification) that stays on screen until you click it. This is useful for styling notices, as they normally quickly fade away.
+
+### Cheatsheets
+Directly open a cheat sheet showing the Obsidian CSS classes. (thanks to @TfThacker)
 
 ## Other Resources for Obsidian Theme Designers
 If you are looking for tools to help out designing a theme with Obsidian, you also might be interested in the following plugins:
