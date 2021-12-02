@@ -1,10 +1,10 @@
 {
-	"id": "obsidian-sample-plugin",
-	"name": "Sample Plugin",
-	"version": "1.0.1",
+	"id": "theme-design-utilities",
+	"name": "Theme Design Utilities",
+	"version": "0.8.0",
 	"minAppVersion": "0.12.0",
-	"description": "This is a sample plugin for Obsidian. This plugin demonstrates some of the capabilities of the Obsidian API.",
-	"author": "Obsidian",
-	"authorUrl": "https://obsidian.md",
-	"isDesktopOnly": false
+	"description": "Small Set of Utilities and QoL Features for Designers of Obsidian Themes.",
+	"author": "pseudometa",
+	"authorUrl": "https://github.com/chrisgrieser/theme-design-utilities",
+	"isDesktopOnly": true
 }
