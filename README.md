@@ -2,7 +2,7 @@
 
 <!-- ![](https://img.shields.io/github/downloads/chrisgrieser/obsidian-theme-design-utilities/total?label=Total%20Downloads&style=plastic) ![](https://img.shields.io/github/v/release/chrisgrieser/obsidian-theme-design-utilities?label=Latest%20Release&style=plastic) -->
 
-SOme utilities and Quality-of-Life features for designers of [Obsidian](https://en.wikipedia.org/wiki/Obsidian) themes.
+Some utilities and Quality-of-Life features for designers of [Obsidian](https://en.wikipedia.org/wiki/Obsidian) themes.
 
 ## Table of Content
 <!-- MarkdownTOC -->
@@ -27,7 +27,7 @@ Conveniently toggle emulation of the mobile version of Obsidian. This helps with
 Post a notice (notification) that stays on screen until you click it. This is useful for styling notices, as they normally quickly fade away.
 
 ### Cheatsheets
-Directly open a cheat sheet showing the Obsidian CSS classes. (thanks to @TfThacker)
+Directly open a cheat sheet showing the Obsidian CSS classes.[^1]
 
 ## Other Resources for Obsidian Theme Designers
 If you are looking for tools to help out designing a theme with Obsidian, you also might be interested in the following plugins:
@@ -66,3 +66,5 @@ In my day job, I am a researcher and sociology. In my phD project, I investigate
 
 - [Discord](https://discord.gg/veuWUTm): `@pseudometa#9546`
 - Twitter: [@pseudo_meta](https://twitter.com/pseudo_meta)
+
+[^1]: made by @TfThacker (thanks!)
