@@ -1,6 +1,6 @@
 # Theme Design Utilities
 
-![](https://img.shields.io/github/downloads/chrisgrieser/obsidian-theme-design-utilities/total?label=Total%20Downloads&style=plastic) ![](https://img.shields.io/github/v/release/chrisgrieser/obsidian-theme-design-utilities?label=Latest%20Release&style=plastic)
+<!-- ![](https://img.shields.io/github/downloads/chrisgrieser/obsidian-theme-design-utilities/total?label=Total%20Downloads&style=plastic) ![](https://img.shields.io/github/v/release/chrisgrieser/obsidian-theme-design-utilities?label=Latest%20Release&style=plastic) -->
 
 Small set of utilities and Quality-of-Life features for designers of [Obsidian](https://en.wikipedia.org/wiki/Obsidian) themes.
 
