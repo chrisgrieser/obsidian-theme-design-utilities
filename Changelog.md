@@ -1,3 +1,5 @@
+- 2021-12-02	merged the two emulation commands to one toggle command
+- 2021-12-02	release 0.9.0
 - 2021-12-02	description fixes
 - 2021-12-02	disable buttons till release
 - 2021-12-02	first prototype
