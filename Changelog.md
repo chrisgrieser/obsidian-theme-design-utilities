@@ -1,0 +1,5 @@
+- 2021-12-02	description fixes
+- 2021-12-02	disable buttons till release
+- 2021-12-02	first prototype
+- 2021-12-02	version & manifest
+- 2021-12-02	Initial commit
