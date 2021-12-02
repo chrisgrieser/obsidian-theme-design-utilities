@@ -18,11 +18,18 @@ export default class themeDesignUtilities extends Plugin {
 			callback: () => new Notice ("I am a test notice. I will stay here until you click me. ", 0),
 		});
 		this.addCommand({
-			id: "emulate-mobile-toggle",
+			id: "toggle-emulate-mobile",
 			name: "Toggle mobile emulation",
 			callback: () => {
 				if (this.app.isMobile) this.app.emulateMobile(false);
 				else this.app.emulateMobile(true);
+			},
+		});
+		this.addCommand({
+			id: "open-url",
+			name: "Open URL",
+			callback: () => {
+				window.open("https://github.com/chrisgrieser/obsidian-theme-design-utilities")
 			},
 		});
 
