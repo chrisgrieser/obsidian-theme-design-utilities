@@ -1,6 +1,7 @@
 import { App, Notice, Plugin } from "obsidian";
 
 declare module "obsidian" {
+	// to add type safety of the undocumented method
 	interface App {
 		emulateMobile: (toggle: boolean) => void;
 	}
