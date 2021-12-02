@@ -1,22 +1,61 @@
 {
-    "root": true,
-    "parser": "@typescript-eslint/parser",
-    "plugins": [
-      "@typescript-eslint"
-    ],
-    "extends": [
-      "eslint:recommended",
-      "plugin:@typescript-eslint/eslint-recommended",
-      "plugin:@typescript-eslint/recommended"
-    ], 
-    "parserOptions": {
-        "sourceType": "module"
-    },
-    "rules": {
-      "no-unused-vars": "off",
-      "@typescript-eslint/no-unused-vars": ["error", { "args": "none" }],
-      "@typescript-eslint/ban-ts-comment": "off",
-      "no-prototype-builtins": "off",
-      "@typescript-eslint/no-empty-function": "off"
-    } 
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "plugins": [
+    "@typescript-eslint"
+  ],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "parserOptions": {
+    "sourceType": "module"
+  },
+  "rules": {
+    // specifically for Obsidian Plugins
+    "@typescript-eslint/no-unused-vars": "off",
+    "@typescript-eslint/no-extra-semi": "warn",
+    "no-shadow": ["error", { "builtinGlobals": true, "hoist": "all", "allow": ["App"] }],
+
+    // Variable naming
+    "camelcase": ["error", {"properties": "always", "ignoreImports": true}],
+    "no-var": "error",
+    "new-cap": "error",
+    "prefer-const": "warn",
+    "vars-on-top": "warn",
+
+    // Tabs / Spaces
+    "no-mixed-spaces-and-tabs": "warn",
+    "no-empty-function": "warn",
+    "indent": ["warn", "tab"],
+    "no-multi-spaces": "warn",
+
+    // Semicolon
+    "no-extra-semi": "warn",
+    "semi": ["warn", "always", {"omitLastInOneLineBlock": true}],
+
+    // Strings
+    "quotes": ["warn", "double"],
+    "no-useless-concat": "warn",
+    "no-multi-str": "error",
+
+    // Conditions
+    "eqeqeq" : "error",
+    "no-negated-condition": "error",
+    "no-unneeded-ternary": "error",
+    "no-nested-ternary": "error",
+    "yoda": "warn",
+    "no-else-return": "error",
+    "no-mixed-operators": "error",
+
+    // Spacing
+    "arrow-spacing": "warn",
+    "keyword-spacing": "warn",
+    "spaced-comment": ["warn", "always", { "exceptions": ["-", "_"] }],
+    "comma-spacing": "warn",
+
+    // Misc
+    "dot-notation": "error",
   }
+}
