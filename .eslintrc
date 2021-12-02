@@ -16,7 +16,7 @@
     // specifically for Obsidian Plugins
     "@typescript-eslint/no-unused-vars": "off",
     "@typescript-eslint/no-extra-semi": "warn",
-    "no-shadow": ["error", { "builtinGlobals": true, "hoist": "all", "allow": ["App"] }],
+    "no-shadow": ["error", { "builtinGlobals": true, "hoist": "all"}],
 
     // Variable naming
     "camelcase": ["error", {"properties": "always", "ignoreImports": true}],

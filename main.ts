@@ -1,9 +1,10 @@
-import { App, Notice, Plugin } from "obsidian";
+import { Notice, Plugin } from "obsidian";
 
 declare module "obsidian" {
-	// to add type safety of the undocumented method
+	// to add type safety of the undocumented methods
 	interface App {
 		emulateMobile: (toggle: boolean) => void;
+		isMobile: () => void;
 	}
 }
 
@@ -17,14 +18,12 @@ export default class themeDesignUtilities extends Plugin {
 			callback: () => new Notice ("I am a test notice. I will stay here until you click me. ", 0),
 		});
 		this.addCommand({
-			id: "emulate-mobile-on",
-			name: "Turn ON mobile emulation",
-			callback: () => this.app.emulateMobile(true),
-		});
-		this.addCommand({
-			id: "emulate-mobile-off",
-			name: "Turn OFF mobile emulation",
-			callback: () => this.app.emulateMobile(false),
+			id: "emulate-mobile-toggle",
+			name: "Toggle mobile emulation",
+			callback: () => {
+				if (this.app.isMobile) this.app.emulateMobile(false);
+				else this.app.emulateMobile(true);
+			},
 		});
 
 		console.log("Theme Design Utilities Plugin loaded.");
