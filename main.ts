@@ -15,8 +15,9 @@ export default class themeDesignUtilities extends Plugin {
 		this.addCommand({
 			id: "test-notice",
 			name: "Test Notice",
-			callback: () => new Notice ("I am a test notice. I will stay here until you click me. ", 0),
+			callback: () => new Notice ("I am a test notice. 👋 \n\nI will stay here until you click me. ", 0),
 		});
+
 		this.addCommand({
 			id: "toggle-emulate-mobile",
 			name: "Toggle mobile emulation",
@@ -25,12 +26,11 @@ export default class themeDesignUtilities extends Plugin {
 				else this.app.emulateMobile(true);
 			},
 		});
+
 		this.addCommand({
-			id: "open-url",
-			name: "Open URL",
-			callback: () => {
-				window.open("https://github.com/chrisgrieser/obsidian-theme-design-utilities")
-			},
+			id: "cheatsheet-css-classes",
+			name: "Cheatsheet: Obsidian CSS Classes",
+			callback: () => window.open("https://raw.githubusercontent.com/chrisgrieser/obsidian-theme-design-utilities/master/cheatsheets/css-classes.png"),
 		});
 
 		console.log("Theme Design Utilities Plugin loaded.");
