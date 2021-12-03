@@ -1,6 +1,6 @@
 # Theme Design Utilities
 
-<!-- ![](https://img.shields.io/github/downloads/chrisgrieser/obsidian-theme-design-utilities/total?label=Total%20Downloads&style=plastic) ![](https://img.shields.io/github/v/release/chrisgrieser/obsidian-theme-design-utilities?label=Latest%20Release&style=plastic) -->
+![](https://img.shields.io/github/downloads/chrisgrieser/obsidian-theme-design-utilities/total?label=Total%20Downloads&style=plastic) ![](https://img.shields.io/github/v/release/chrisgrieser/obsidian-theme-design-utilities?label=Latest%20Release&style=plastic)
 
 Some utilities and Quality-of-Life features for designers of [Obsidian](https://en.wikipedia.org/wiki/Obsidian) themes.
 
@@ -21,13 +21,13 @@ Some utilities and Quality-of-Life features for designers of [Obsidian](https://
 ## Features
 
 ### Mobile Emulation
-Conveniently toggle emulation of the mobile version of Obsidian. This helps with styling your theme for mobile. (Basically, this plugin adds commands that run `app.emulateMobile(true);` and `app.emulateMobile(false);`)
+Conveniently enable the mobile emulation of Obsidian, i.e. how Obsidian would look on mobile. This helps with styling your theme for mobile.[^1]
 
 ### Permanent Notice
 Post a notice (notification) that stays on screen until you click it. This is useful for styling notices, as they normally quickly fade away.
 
 ### Cheatsheets
-Directly open a cheat sheet showing the Obsidian CSS classes.[^1]
+Directly open a cheat sheet showing the Obsidian CSS classes.[^2]
 
 ## Other Resources for Obsidian Theme Designers
 If you are looking for tools to help out designing a theme with Obsidian, you also might be interested in the following plugins:
@@ -67,4 +67,5 @@ In my day job, I am a researcher and sociology. In my phD project, I investigate
 - [Discord](https://discord.gg/veuWUTm): `@pseudometa#9546`
 - Twitter: [@pseudo_meta](https://twitter.com/pseudo_meta)
 
-[^1]: made by @TfThacker (thanks!)
+[^1]: Basically, this plugin adds a command that toggles `app.emulateMobile`.
+[^2]: made by @TfThacker (thanks!)
