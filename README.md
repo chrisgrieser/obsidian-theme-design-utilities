@@ -9,9 +9,11 @@ Some utilities and Quality-of-Life features for designers of [Obsidian](https://
 
 - [Features](#features)
 	- [Mobile Emulation](#mobile-emulation)
-	- [Permanent Notice](#permanent-notice)
+	- [Permanent Test Notice](#permanent-test-notice)
 	- [Cheatsheets](#cheatsheets)
 - [Other Resources for Obsidian Theme Designers](#other-resources-for-obsidian-theme-designers)
+- [Obsidian Plugins](#obsidian-plugins)
+	- [Guides](#guides)
 - [Installation](#installation)
 - [Contribute](#contribute)
 - [Credits](#credits)
@@ -28,20 +30,22 @@ Post a notice (notification) that stays on screen until you click it. This is us
 
 <img width=60% alt="Screenshot 2021-12-03 14 54 24" src="https://user-images.githubusercontent.com/73286100/144614112-de2e3bc2-d8f0-4c0f-b770-3718a8c6ce33.png">
 
-
 ### Cheatsheets
 Directly open a cheat sheet showing the Obsidian CSS classes.[^2]
 
 ## Other Resources for Obsidian Theme Designers
-If you are looking for tools to help out designing a theme with Obsidian, you also might be interested in the following plugins:
+
+## Obsidian Plugins
 - [My Snippets](https://github.com/chetachiezikeuzor/MySnippets-Plugin)
 - [Snippet Commands](https://github.com/deathau/snippet-commands-obsidian)
 - [BRAT](https://github.com/TfTHacker/obsidian42-brat#themes)
 - [Theme Picker](https://github.com/kenset/obsidian-theme-picker)
 - [Garble Text](https://github.com/kurakart/garble-text)
 
-If you haven't, you should also check out this overview of resources for designing an Obsidian Theme.
-- [Resources and Guides for Theme Designers - Obsidian Hub](https://publish.obsidian.md/hub/04+-+Guides%2C+Workflows%2C+%26+Courses/Guides/Resources+and+Guides+for+Theme+Designers)
+### Guides
+- [Overview of Resources and Guides for Theme Designers](https://publish.obsidian.md/hub/04+-+Guides%2C+Workflows%2C+%26+Courses/Guides/Resources+and+Guides+for+Theme+Designers)
+- [Why and How to use Stylelint for your Obsidian Theme](https://publish.obsidian.md/hub/04+-+Guides%2C+Workflows%2C+%26+Courses/Guides/Why+and+How+to+use+Stylelint+for+your+Obsidian+Theme)
+- [Want some Sass with your obsidian theme‽ here's How and Why - Obsidian Hub - Obsidian Publish](https://publish.obsidian.md/hub/04+-+Guides%2C+Workflows%2C+%26+Courses/Guides/Want+some+Sass+with+your+obsidian+theme%E2%80%BD+here's+How+and+Why)
 
 ## Installation
 Right now, the plugin is still in beta. It can be installed with the [BRAT Plugin](https://github.com/TfTHacker/obsidian42-brat).
