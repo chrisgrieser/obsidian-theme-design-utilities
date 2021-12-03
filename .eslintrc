@@ -1,22 +1,23 @@
 {
   "root": true,
   "parser": "@typescript-eslint/parser",
-  "plugins": [
-    "@typescript-eslint"
-  ],
+  "plugins": ["@typescript-eslint"],
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended"
   ],
-  "parserOptions": {
-    "sourceType": "module"
-  },
+  "parserOptions": {"sourceType": "module"},
+
   "rules": {
     // specifically for Obsidian Plugins
     "@typescript-eslint/no-unused-vars": "off",
     "@typescript-eslint/no-extra-semi": "warn",
-    "no-shadow": ["error", { "builtinGlobals": true, "hoist": "all"}],
+    "no-shadow": ["error", { "builtinGlobals": true, "hoist": "all", "allow": [""] }],
+
+    //-----------------------------------
+    //-----------------------------------
+    //-----------------------------------
 
     // Variable naming
     "camelcase": ["error", {"properties": "always", "ignoreImports": true}],
@@ -24,21 +25,43 @@
     "new-cap": "error",
     "prefer-const": "warn",
     "vars-on-top": "warn",
+    "sort-vars": "warn",
 
     // Tabs / Spaces
     "no-mixed-spaces-and-tabs": "warn",
     "no-empty-function": "warn",
     "indent": ["warn", "tab"],
     "no-multi-spaces": "warn",
+    "array-bracket-spacing": "warn",
+    "space-before-blocks": "warn",
+    "semi-spacing": "warn",
+    "object-curly-spacing": ["warn", "always"],
+
+    // Spacing
+    "arrow-spacing": "warn",
+    "keyword-spacing": "warn",
+    "spaced-comment": ["warn", "always", { "exceptions": ["-", "_"] }],
+    "comma-spacing": "warn",
+    "comma-style": "warn",
+    "comma-dangle": ["error", {
+        "arrays": "never",
+        "objects": "only-multiline",
+    }],
+    "object-curly-newline": ["error", { "multiline": true }],
+    "curly": ["error", "multi"],
 
     // Semicolon
     "no-extra-semi": "warn",
-    "semi": ["warn", "always", {"omitLastInOneLineBlock": true}],
+    "semi-style": ["error", "last"],
+    "semi": ["warn", "always", {"omitLastInOneLineBlock": true }],
 
     // Strings
     "quotes": ["warn", "double"],
     "no-useless-concat": "warn",
     "no-multi-str": "error",
+
+    // Numbers
+    "no-magic-numbers": ["error", { "ignore": [1, 0, -1], "ignoreArrayIndexes": true }],
 
     // Conditions
     "eqeqeq" : "error",
@@ -46,14 +69,9 @@
     "no-unneeded-ternary": "error",
     "no-nested-ternary": "error",
     "yoda": "warn",
-    "no-else-return": "error",
     "no-mixed-operators": "error",
-
-    // Spacing
-    "arrow-spacing": "warn",
-    "keyword-spacing": "warn",
-    "spaced-comment": ["warn", "always", { "exceptions": ["-", "_"] }],
-    "comma-spacing": "warn",
+    "no-else-return": ["error", { "allowElseIf": false} ],
+    "no-lonely-if": "error",
 
     // Misc
     "dot-notation": "error",

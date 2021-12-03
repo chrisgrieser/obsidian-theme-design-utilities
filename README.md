@@ -12,7 +12,7 @@ Some utilities and Quality-of-Life features for designers of [Obsidian](https://
 	- [Permanent Test Notice](#permanent-test-notice)
 	- [Cheatsheets](#cheatsheets)
 - [Other Resources for Obsidian Theme Designers](#other-resources-for-obsidian-theme-designers)
-- [Obsidian Plugins](#obsidian-plugins)
+	- [Obsidian Plugins](#obsidian-plugins)
 	- [Guides](#guides)
 - [Installation](#installation)
 - [Contribute](#contribute)
@@ -28,14 +28,16 @@ Conveniently enable the mobile emulation of Obsidian, i.e. how Obsidian would lo
 ### Permanent Test Notice
 Post a notice (notification) that stays on screen until you click it. This is useful for styling notices, as they normally quickly fade away.
 
-<img width=60% alt="Screenshot 2021-12-03 14 54 24" src="https://user-images.githubusercontent.com/73286100/144614112-de2e3bc2-d8f0-4c0f-b770-3718a8c6ce33.png">
+<img width=40% alt="Test Notice" src="https://user-images.githubusercontent.com/73286100/144614112-de2e3bc2-d8f0-4c0f-b770-3718a8c6ce33.png">
 
 ### Cheatsheets
 Directly open a cheat sheet showing the Obsidian CSS classes.[^2]
 
+<img src="./cheatsheets/css-classes.png" alt="Obsidian API Model" width=40%>
+
 ## Other Resources for Obsidian Theme Designers
 
-## Obsidian Plugins
+### Obsidian Plugins
 - [My Snippets](https://github.com/chetachiezikeuzor/MySnippets-Plugin)
 - [Snippet Commands](https://github.com/deathau/snippet-commands-obsidian)
 - [BRAT](https://github.com/TfTHacker/obsidian42-brat#themes)
@@ -45,7 +47,7 @@ Directly open a cheat sheet showing the Obsidian CSS classes.[^2]
 ### Guides
 - [Overview of Resources and Guides for Theme Designers](https://publish.obsidian.md/hub/04+-+Guides%2C+Workflows%2C+%26+Courses/Guides/Resources+and+Guides+for+Theme+Designers)
 - [Why and How to use Stylelint for your Obsidian Theme](https://publish.obsidian.md/hub/04+-+Guides%2C+Workflows%2C+%26+Courses/Guides/Why+and+How+to+use+Stylelint+for+your+Obsidian+Theme)
-- [Want some Sass with your obsidian theme‽ here's How and Why - Obsidian Hub - Obsidian Publish](https://publish.obsidian.md/hub/04+-+Guides%2C+Workflows%2C+%26+Courses/Guides/Want+some+Sass+with+your+obsidian+theme%E2%80%BD+here's+How+and+Why)
+- [Want some Sass with your obsidian theme? Here's How and Why](https://publish.obsidian.md/hub/04+-+Guides%2C+Workflows%2C+%26+Courses/Guides/Want+some+Sass+with+your+obsidian+theme%E2%80%BD+here's+How+and+Why)
 
 ## Installation
 Right now, the plugin is still in beta. It can be installed with the [BRAT Plugin](https://github.com/TfTHacker/obsidian42-brat).
