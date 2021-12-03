@@ -33,8 +33,9 @@ Directly open a cheat sheet showing the Obsidian CSS classes.[^2]
 If you are looking for tools to help out designing a theme with Obsidian, you also might be interested in the following plugins:
 - [My Snippets](https://github.com/chetachiezikeuzor/MySnippets-Plugin)
 - [Snippet Commands](https://github.com/deathau/snippet-commands-obsidian)
-- [Theme Picker](https://github.com/kenset/obsidian-theme-picker)
 - [BRAT](https://github.com/TfTHacker/obsidian42-brat#themes)
+- [Theme Picker](https://github.com/kenset/obsidian-theme-picker)
+- [Garble Text](https://github.com/kurakart/garble-text)
 
 If you haven't, you should also check out this overview of resources for designing an Obsidian Theme.
 - [Resources and Guides for Theme Designers - Obsidian Hub](https://publish.obsidian.md/hub/04+-+Guides%2C+Workflows%2C+%26+Courses/Guides/Resources+and+Guides+for+Theme+Designers)
