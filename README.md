@@ -1,6 +1,6 @@
 # Theme Design Utilities
 
-![](https://img.shields.io/github/downloads/chrisgrieser/obsidian-theme-design-utilities/total?label=Total%20Downloads&style=plastic) ![](https://img.shields.io/github/v/release/chrisgrieser/obsidian-theme-design-utilities?label=Latest%20Release&style=plastic)
+![](https://img.shields.io/github/downloads/chrisgrieser/obsidian-theme-design-utilities/total?label=Total%20Downloads&style=plastic) ![](https://img.shields.io/github/v/release/chrisgrieser/obsidian-theme-design-utilities?label=Latest%20Release&style=plastic) [![](https://img.shields.io/badge/changelog-click%20here-FFE800?style=plastic)](Changelog.md)
 
 Some utilities and Quality-of-Life features for designers of [Obsidian](https://en.wikipedia.org/wiki/Obsidian) themes.
 
@@ -23,8 +23,11 @@ Some utilities and Quality-of-Life features for designers of [Obsidian](https://
 ### Mobile Emulation
 Conveniently enable the mobile emulation of Obsidian, i.e. how Obsidian would look on mobile. This helps with styling your theme for mobile.[^1]
 
-### Permanent Notice
+### Permanent Test Notice
 Post a notice (notification) that stays on screen until you click it. This is useful for styling notices, as they normally quickly fade away.
+
+<img width=60% alt="Screenshot 2021-12-03 14 54 24" src="https://user-images.githubusercontent.com/73286100/144614112-de2e3bc2-d8f0-4c0f-b770-3718a8c6ce33.png">
+
 
 ### Cheatsheets
 Directly open a cheat sheet showing the Obsidian CSS classes.[^2]
