@@ -1,3 +1,14 @@
+- 2021-12-05	add freeze command
+- 2021-12-03	update eslintrc + readme
+- 2021-12-03	update other resources
+- 2021-12-03	update
+- 2021-12-03	Update README.md
+- 2021-12-03	add reference to garble text plugin
+- 2021-12-03	Update README.md
+- 2021-12-02	add license
+- 2021-12-02	Update README.md
+- 2021-12-02	add new command to readme
+- 2021-12-02	release 0.11.0
 - 2021-12-02	add cheatsheet command
 - 2021-12-02	add cheatsheets
 - 2021-12-02	release 0.10.0
