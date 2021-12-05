@@ -14,6 +14,7 @@
     "@typescript-eslint/no-unused-vars": "off",
     "@typescript-eslint/no-extra-semi": "warn",
     "no-shadow": ["error", { "builtinGlobals": true, "hoist": "all", "allow": [""] }],
+    "no-debugger": "off",
 
     //-----------------------------------
     //-----------------------------------
@@ -61,7 +62,7 @@
     "no-multi-str": "error",
 
     // Numbers
-    "no-magic-numbers": ["error", { "ignore": [1, 0, -1], "ignoreArrayIndexes": true }],
+    "no-magic-numbers": ["error", { "ignore": [-4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9], "ignoreArrayIndexes": true }],
 
     // Conditions
     "eqeqeq" : "error",
