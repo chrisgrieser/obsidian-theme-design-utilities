@@ -1,3 +1,5 @@
+- 2021-12-05	release 0.12.0
+- 2021-12-05	Update README.md
 - 2021-12-05	add freeze command
 - 2021-12-03	update eslintrc + readme
 - 2021-12-03	update other resources
