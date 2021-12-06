@@ -1,3 +1,6 @@
+- 2021-12-07	implemented @Lishid feedback
+- 2021-12-06	fix
+- 2021-12-05	release 0.12.1
 - 2021-12-05	release 0.12.0
 - 2021-12-05	Update README.md
 - 2021-12-05	add freeze command
