@@ -9,6 +9,7 @@ Some utilities and Quality-of-Life features for designers of [Obsidian](https://
 
 - [Features](#features)
 	- [Mobile Emulation](#mobile-emulation)
+	- [Freeze Obsidian](#freeze-obsidian)
 	- [Permanent Test Notice](#permanent-test-notice)
 	- [Cheatsheets](#cheatsheets)
 - [Other Resources for Obsidian Theme Designers](#other-resources-for-obsidian-theme-designers)

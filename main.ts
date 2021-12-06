@@ -43,6 +43,12 @@ export default class themeDesignUtilities extends Plugin {
 			name: "Cheatsheet: Obsidian CSS Classes",
 			callback: () => window.open("https://raw.githubusercontent.com/chrisgrieser/obsidian-theme-design-utilities/master/cheatsheets/css-classes.png"),
 		});
+		
+		this.addCommand({
+			id: "cheatsheet-css-classes",
+			name: "Cheatsheet: Obsidian CSS Classes",
+			callback: () => window.open("https://raw.githubusercontent.com/chrisgrieser/obsidian-theme-design-utilities/master/cheatsheets/css-classes.png"),
+		});
 
 		console.log("Theme Design Utilities Plugin loaded.");
 	}
