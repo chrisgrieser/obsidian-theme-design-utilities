@@ -20,10 +20,9 @@
     //-----------------------------------
     //-----------------------------------
 
-    // Variable naming
+    // Variables
     "camelcase": ["error", {"properties": "always", "ignoreImports": true}],
     "no-var": "error",
-    "new-cap": "error",
     "prefer-const": "warn",
     "vars-on-top": "warn",
     "sort-vars": "warn",
@@ -37,19 +36,22 @@
     "space-before-blocks": "warn",
     "semi-spacing": "warn",
     "object-curly-spacing": ["warn", "always"],
+    "no-whitespace-before-property": "error",
+
+    // Loops
+    "no-unmodified-loop-condition": "error",
 
     // Spacing
+    "no-empty": "warn",
     "arrow-spacing": "warn",
     "keyword-spacing": "warn",
     "spaced-comment": ["warn", "always", { "exceptions": ["-", "_"] }],
     "comma-spacing": "warn",
     "comma-style": "warn",
-    "comma-dangle": ["error", {
-        "arrays": "never",
-        "objects": "only-multiline",
-    }],
+    "comma-dangle": ["error", {"arrays": "never", "objects": "only-multiline", }],
     "object-curly-newline": ["error", { "multiline": true }],
-    "curly": ["error", "multi"],
+    "curly": ["warn", "multi-or-nest", "consistent"],
+    "no-multiple-empty-lines": ["warn", { "max": 2 }],
 
     // Semicolon
     "no-extra-semi": "warn",
@@ -62,10 +64,12 @@
     "no-multi-str": "error",
 
     // Numbers
-    "no-magic-numbers": ["error", { "ignore": [-4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9], "ignoreArrayIndexes": true }],
+    "no-magic-numbers": ["error", { "ignore": [-4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 100, 1000], "ignoreArrayIndexes": true }],
+    "no-floating-decimal": "warn",
 
     // Conditions
     "eqeqeq" : "error",
+    "no-eq-null" : "error",
     "no-negated-condition": "error",
     "no-unneeded-ternary": "error",
     "no-nested-ternary": "error",

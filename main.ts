@@ -23,10 +23,7 @@ export default class themeDesignUtilities extends Plugin {
 		this.addCommand({
 			id: "toggle-emulate-mobile",
 			name: "Toggle mobile emulation",
-			callback: () => {
-				if (this.app.isMobile) this.app.emulateMobile(false);
-				else this.app.emulateMobile(true);
-			},
+			callback: () => this.app.emulateMobile(!this.app.isMobile),
 		});
 
 		this.addCommand({
@@ -34,16 +31,10 @@ export default class themeDesignUtilities extends Plugin {
 			name: "Freeze Obsidian (triggered with " + freezeDelaySecs.toString() + "s delay)",
 			callback: () => {
 				new Notice ("Will freeze Obsidian in " + freezeDelaySecs.toString() + "s (if the console is open.)", 3000); // eslint-disable-line no-magic-numbers
-				setTimeout(() => {debugger}, freezeDelaySecs * 1000); // eslint-disable-line no-magic-numbers
+				setTimeout(() => {debugger}, freezeDelaySecs * 1000);
 			},
 		});
 
-		this.addCommand({
-			id: "cheatsheet-css-classes",
-			name: "Cheatsheet: Obsidian CSS Classes",
-			callback: () => window.open("https://raw.githubusercontent.com/chrisgrieser/obsidian-theme-design-utilities/master/cheatsheets/css-classes.png"),
-		});
-		
 		this.addCommand({
 			id: "cheatsheet-css-classes",
 			name: "Cheatsheet: Obsidian CSS Classes",
