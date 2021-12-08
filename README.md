@@ -49,6 +49,7 @@ Directly open a cheat sheet showing the Obsidian CSS classes.[^2]
 - [BRAT](https://github.com/TfTHacker/obsidian42-brat#themes)
 - [Theme Picker](https://github.com/kenset/obsidian-theme-picker)
 - [Garble Text](https://github.com/kurakart/garble-text)
+- [Print Preview](https://github.com/nothingislost/obsidian-print-preview) (unlisted)
 
 ### Guides
 - [Overview of Resources and Guides for Theme Designers](https://publish.obsidian.md/hub/04+-+Guides%2C+Workflows%2C+%26+Courses/Guides/Resources+and+Guides+for+Theme+Designers)
