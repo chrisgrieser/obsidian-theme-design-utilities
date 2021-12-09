@@ -11,6 +11,7 @@ Some utilities and Quality-of-Life features for designers of [Obsidian](https://
 	- [Mobile Emulation](#mobile-emulation)
 	- [Freeze Obsidian](#freeze-obsidian)
 	- [Permanent Test Notice](#permanent-test-notice)
+	- [Light/Dark Mode Toggle](#lightdark-mode-toggle)
 	- [Cheatsheets](#cheatsheets)
 - [Other Resources for Obsidian Theme Designers](#other-resources-for-obsidian-theme-designers)
 	- [Obsidian Plugins](#obsidian-plugins)
@@ -35,6 +36,9 @@ Freeze interaction with Obsidian, after a small delay. During that delay, you ca
 Post a notice (notification) that stays on screen until you click it. This is useful for styling notices, as they normally quickly fade away.
 
 <img width=40% alt="Test Notice" src="https://user-images.githubusercontent.com/73286100/144614112-de2e3bc2-d8f0-4c0f-b770-3718a8c6ce33.png">
+
+### Light/Dark Mode Toggle
+A simple command to toggle between light and dark mode.
 
 ### Cheatsheets
 Directly open a cheat sheet showing the Obsidian CSS classes.[^2]
