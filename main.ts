@@ -12,9 +12,9 @@ export default class themeDesignUtilities extends Plugin {
 
 	async onload() {
 
-		const freezeDelaySecs = 4;
 		console.log("Theme Design Utilities Plugin loaded.");
 
+		const freezeDelaySecs = 4;
 		this.addCommand({
 			id: "freeze-obsidian",
 			name: "Freeze Obsidian (with " + freezeDelaySecs.toString() + "s delay)",
@@ -74,6 +74,8 @@ export default class themeDesignUtilities extends Plugin {
 	}
 
 	cycleViews() {
+		const noticeDuration = 1500;
+
 		const activePane = this.app.workspace.activeLeaf;
 		const currentView = activePane.getViewState();
 		if (currentView.type === "empty") {
@@ -91,16 +93,16 @@ export default class themeDesignUtilities extends Plugin {
 			case "preview":
 				newMode.state.mode = "source";
 				newMode.state.source = true;
-				new Notice ("Now: Source Mode");
+				new Notice ("Now: Source Mode", noticeDuration);
 				break;
 			case "source":
 				newMode.state.mode = "source";
 				newMode.state.source = false;
-				new Notice ("Now: Live Preview");
+				new Notice ("Now: Live Preview", noticeDuration);
 				break;
 			case "live":
 				newMode.state.mode = "preview";
-				new Notice ("Now: Reading Mode");
+				new Notice ("Now: Reading Mode", noticeDuration);
 				break;
 		}
 
