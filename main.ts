@@ -1,4 +1,4 @@
-import { Notice, Plugin } from "obsidian";
+import { App, Events, MarkdownView, Notice, Plugin, Workspace, WorkspaceLeaf } from "obsidian";
 
 declare module "obsidian" {
 	// add type safety for the undocumented methods
@@ -17,7 +17,7 @@ export default class themeDesignUtilities extends Plugin {
 
 		this.addCommand({
 			id: "freeze-obsidian",
-			name: "Freeze Obsidian (triggered with " + freezeDelaySecs.toString() + "s delay)",
+			name: "Freeze Obsidian (with " + freezeDelaySecs.toString() + "s delay)",
 			callback: () => {
 				new Notice ("Will freeze Obsidian in " + freezeDelaySecs.toString() + "s (if the console is open.)", 3000); // eslint-disable-line no-magic-numbers
 				setTimeout(() => {debugger}, freezeDelaySecs * 1000);
@@ -38,18 +38,24 @@ export default class themeDesignUtilities extends Plugin {
 
 		this.addCommand({
 			id: "cheatsheet-css-classes",
-			name: "Cheatsheet: Obsidian CSS Classes",
+			name: "Cheatsheet – Obsidian CSS Classes",
 			callback: () => window.open("https://raw.githubusercontent.com/chrisgrieser/obsidian-theme-design-utilities/master/cheatsheets/css-classes.png"),
 		});
 
 		this.addCommand({
 			id: "toggle-dark-light-mode",
-			name: "Toggle Dark/Light Mode",
+			name: "Toggle between Dark and Light Mode",
 			callback: () => {
 				const isDarkMode = this.app.vault.getConfig("theme") === "obsidian";
 				if (isDarkMode) this.useLightMode();
 				else this.useDarkMode();
 			}
+		});
+
+		this.addCommand({
+			id: "cycle-views",
+			name: "Cycle between Source Mode, Live Preview, and Reading Mode",
+			callback: () => this.cycleViews(),
 		});
 	}
 
@@ -66,4 +72,39 @@ export default class themeDesignUtilities extends Plugin {
 		this.app.vault.setConfig("theme", "moonstone");
 		this.app.workspace.trigger("css-change");
 	}
+
+	cycleViews() {
+		const activePane = this.app.workspace.activeLeaf;
+		const currentView = activePane.getViewState();
+		if (currentView.type === "empty") {
+			new Notice ("There is currently no file open.");
+			return;
+		}
+
+		let currentMode: string;
+		if (currentView.state.mode === "preview") currentMode = "preview";
+		if (currentView.state.mode === "source" && currentView.state.source) currentMode = "source";
+		if (currentView.state.mode === "source" && !currentView.state.source) currentMode = "live";
+
+		const newMode = currentView;
+		switch (currentMode) {
+			case "preview":
+				newMode.state.mode = "source";
+				newMode.state.source = true;
+				new Notice ("Now: Source Mode");
+				break;
+			case "source":
+				newMode.state.mode = "source";
+				newMode.state.source = false;
+				new Notice ("Now: Live Preview");
+				break;
+			case "live":
+				newMode.state.mode = "preview";
+				new Notice ("Now: Reading Mode");
+				break;
+		}
+
+		activePane.setViewState(newMode);
+	}
+
 }

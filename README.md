@@ -7,12 +7,13 @@ Some utilities and Quality-of-Life features for designers of [Obsidian](https://
 ## Table of Content
 <!-- MarkdownTOC -->
 
-- [Features](#features)
+- [Commands Added](#commands-added)
 	- [Mobile Emulation](#mobile-emulation)
+	- [Cycle between All Three Modes](#cycle-between-all-three-modes)
 	- [Freeze Obsidian](#freeze-obsidian)
 	- [Permanent Test Notice](#permanent-test-notice)
 	- [Light/Dark Mode Toggle](#lightdark-mode-toggle)
-	- [Cheatsheets](#cheatsheets)
+	- [Cheatsheet](#cheatsheet)
 - [Other Resources for Obsidian Theme Designers](#other-resources-for-obsidian-theme-designers)
 	- [Obsidian Plugins](#obsidian-plugins)
 	- [Guides](#guides)
@@ -22,10 +23,13 @@ Some utilities and Quality-of-Life features for designers of [Obsidian](https://
 
 <!-- /MarkdownTOC -->
 
-## Features
+## Commands Added
 
 ### Mobile Emulation
-Conveniently enable the mobile emulation of Obsidian, i.e. how Obsidian would look on mobile. This helps with styling your theme for mobile.[^1]
+Conveniently enable the mobile emulation of Obsidian, i.e. how Obsidian would look on mobile. This helps with styling your theme for mobile.
+
+### Cycle between All Three Modes
+Cycles between Source Mode, Live Preview, and Reading Mode.
 
 ### Freeze Obsidian
 Freeze interaction with Obsidian, after a small delay. During that delay, you can create fleeting elements like context menus or tooltips which will stay on screen. (Note that this only works while the console is open.) To unfreeze Obsidian, simply click the "play" button which appeared at the top of Obsidian.
@@ -38,10 +42,10 @@ Post a notice (notification) that stays on screen until you click it. This is us
 <img width=40% alt="Test Notice" src="https://user-images.githubusercontent.com/73286100/144614112-de2e3bc2-d8f0-4c0f-b770-3718a8c6ce33.png">
 
 ### Light/Dark Mode Toggle
-A simple command to toggle between light and dark mode.
+A simple command to toggle between light and dark mode. 
 
-### Cheatsheets
-Directly open a cheat sheet showing the Obsidian CSS classes.[^2]
+### Cheatsheet
+Open a cheat sheet showing the Obsidian CSS classes.
 
 <img src="./cheatsheets/css-classes.png" alt="Obsidian API Model" width=40%>
 
@@ -69,22 +73,14 @@ Pull Requests adding more utilities are very welcome!
 Please use the `.eslintrc` configuration located in the repository and run eslint before doing a pull request, though. 🙂
 
 ```shell
-# install eslint
-npm install eslint
-
 # Run eslint fixing most common mistakes
 eslint --fix *.ts
-
-# Then, fix the errors that cannot be auto-fixed.
 ```
 
 ## Credits
 Donations via [PayPal](https://www.paypal.com/paypalme/ChrisGrieser) or [Ko-Fi](https://ko-fi.com/pseudometa) 🙏
 
-In my day job, I am a researcher and sociology. In my phD project, I investigate the governance of the app economy and how software ecosystems manage the tension between innovation and compatibility. If you are interested in this subject, feel free to visit [my academic homepage](https://chris-grieser.de/) and get in touch!
+In my day job, I am a researcher in sociology. In my PhD project, I investigate the governance of the app economy and how software ecosystems manage the tension between innovation and compatibility. If you are interested in this subject, feel free to visit [my academic homepage](https://chris-grieser.de/) and get in touch!
 
 - [Discord](https://discord.gg/veuWUTm): `@pseudometa#9546`
 - Twitter: [@pseudo_meta](https://twitter.com/pseudo_meta)
-
-[^1]: Basically, this plugin adds a command that toggles `app.emulateMobile`.
-[^2]: made by @TfThacker (thanks!)
