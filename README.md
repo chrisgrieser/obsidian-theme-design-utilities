@@ -31,6 +31,8 @@ Conveniently enable the mobile emulation of Obsidian, i.e. how Obsidian would lo
 ### Cycle between All Three Modes
 Cycles between Source Mode, Live Preview, and Reading Mode. Set a hotkey to quickly check how the theme looks in all three view modes.
 
+<img src="https://user-images.githubusercontent.com/73286100/148293043-c16e8d32-489d-4f14-9b26-9d00c6a83901.gif" alt="Screen Recording 2022-01-05 at 22 36 10" width=60%>
+
 ### Freeze Obsidian
 Freeze interaction with Obsidian, after a small delay. During that delay, you can create fleeting elements like context menus or tooltips which will stay on screen. (Note that this only works while the console is open.) To unfreeze Obsidian, simply click the "play" button which appeared at the top of Obsidian.
 
