@@ -29,7 +29,7 @@ Some utilities and Quality-of-Life features for designers of [Obsidian](https://
 Conveniently enable the mobile emulation of Obsidian, i.e. how Obsidian would look on mobile. This helps with styling your theme for mobile.
 
 ### Cycle between All Three Modes
-Cycles between Source Mode, Live Preview, and Reading Mode.
+Cycles between Source Mode, Live Preview, and Reading Mode. Set a hotkey to quickly check how the theme looks in all three view modes.
 
 ### Freeze Obsidian
 Freeze interaction with Obsidian, after a small delay. During that delay, you can create fleeting elements like context menus or tooltips which will stay on screen. (Note that this only works while the console is open.) To unfreeze Obsidian, simply click the "play" button which appeared at the top of Obsidian.
@@ -39,10 +39,10 @@ Freeze interaction with Obsidian, after a small delay. During that delay, you ca
 ### Permanent Test Notice
 Post a notice (notification) that stays on screen until you click it. This is useful for styling notices, as they normally quickly fade away.
 
-<img width=40% alt="Test Notice" src="https://user-images.githubusercontent.com/73286100/144614112-de2e3bc2-d8f0-4c0f-b770-3718a8c6ce33.png">
+<img width=40% alt="Screenshot 2022-01-05 22 28 09" src="https://user-images.githubusercontent.com/73286100/148292139-86847227-5048-41e4-a6dc-768e4b54728b.png">
 
 ### Light/Dark Mode Toggle
-A simple command to toggle between light and dark mode. 
+A simple command to toggle between light and dark mode. Set a hotkey to quickly change the mode of the theme.
 
 ### Cheatsheet
 Open a cheat sheet showing the Obsidian CSS classes.
