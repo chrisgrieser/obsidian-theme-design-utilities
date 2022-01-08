@@ -1,10 +1,15 @@
-import { App, Events, MarkdownView, Notice, Plugin, Workspace, WorkspaceLeaf } from "obsidian";
+import { Notice, Plugin } from "obsidian";
 
+// add type safety for the undocumented methods
 declare module "obsidian" {
-	// add type safety for the undocumented methods
-	interface App { // eslint-disable-line no-shadow
-		emulateMobile: (toggle: boolean) => void;
+	interface App {
 		isMobile: () => void;
+		emulateMobile: (toggle: boolean) => void;
+		setTheme: (theme: string) => void;
+	}
+	interface Vault {
+		setConfig: (config: string, newValue: string) => void;
+		getConfig: (config: string) => string;
 	}
 }
 
@@ -45,11 +50,7 @@ export default class themeDesignUtilities extends Plugin {
 		this.addCommand({
 			id: "toggle-dark-light-mode",
 			name: "Toggle between Dark and Light Mode",
-			callback: () => {
-				const isDarkMode = this.app.vault.getConfig("theme") === "obsidian";
-				if (isDarkMode) this.useLightMode();
-				else this.useDarkMode();
-			}
+			callback: () => this.toggleTheme(),
 		});
 
 		this.addCommand({
@@ -61,17 +62,20 @@ export default class themeDesignUtilities extends Plugin {
 
 	async onunload() { console.log("Theme Design Utilities Plugin unloaded.") }
 
-	useDarkMode() {
-		this.app.setTheme("obsidian");
-		this.app.vault.setConfig("theme", "obsidian");
-		this.app.workspace.trigger("css-change");
+
+	toggleTheme() {
+		const isDarkMode = this.app.vault.getConfig("theme") === "obsidian";
+		if (isDarkMode) {
+			this.app.setTheme("moonstone");
+			this.app.vault.setConfig("theme", "moonstone");
+			this.app.workspace.trigger("css-change");
+		} else {
+			this.app.setTheme("obsidian");
+			this.app.vault.setConfig("theme", "obsidian");
+			this.app.workspace.trigger("css-change");
+		}
 	}
 
-	useLightMode() {
-		this.app.setTheme("moonstone");
-		this.app.vault.setConfig("theme", "moonstone");
-		this.app.workspace.trigger("css-change");
-	}
 
 	cycleViews() {
 		const noticeDuration = 1500;
