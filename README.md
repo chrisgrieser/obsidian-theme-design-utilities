@@ -13,6 +13,7 @@ Some utilities and Quality-of-Life features for designers of [Obsidian](https://
 	- [Freeze Obsidian](#freeze-obsidian)
 	- [Permanent Test Notice](#permanent-test-notice)
 	- [Light/Dark Mode Toggle](#lightdark-mode-toggle)
+	- [CSS Feature Compatibility \(Chrome Version\)](#css-feature-compatibility-chrome-version)
 	- [Cheatsheet](#cheatsheet)
 - [Other Resources for Obsidian Theme Designers](#other-resources-for-obsidian-theme-designers)
 	- [Obsidian Plugins](#obsidian-plugins)
@@ -45,6 +46,9 @@ Post a notice (notification) that stays on screen until you click it. This is us
 
 ### Light/Dark Mode Toggle
 A simple command to toggle between light and dark mode. Set a hotkey to quickly change the mode of the theme.
+
+### CSS Feature Compatibility (Chrome Version)
+Will display a notice with the current Chrome version utilized by Obsidian to render CSS. Sites like [MDN](https://developer.mozilla.org/en-US/) or [W3-Schools](https://www.w3schools.com/cssref/css3_pr_overflow-y.asp) usually document the minimum Chrome version required for a certain CSS feature at the bottom of the feature's documentation page.
 
 ### Cheatsheet
 Open a cheat sheet showing the Obsidian CSS classes.

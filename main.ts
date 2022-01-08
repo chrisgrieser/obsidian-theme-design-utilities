@@ -24,7 +24,7 @@ export default class themeDesignUtilities extends Plugin {
 			id: "freeze-obsidian",
 			name: "Freeze Obsidian (with " + freezeDelaySecs.toString() + "s delay)",
 			callback: () => {
-				new Notice ("Will freeze Obsidian in " + freezeDelaySecs.toString() + "s (if the console is open.)", 3000); // eslint-disable-line no-magic-numbers
+				new Notice ("Will freeze Obsidian in " + freezeDelaySecs.toString() + "s (if the console is open.)", (freezeDelaySecs - 1) * 1000);
 				setTimeout(() => {debugger}, freezeDelaySecs * 1000);
 			},
 		});
@@ -57,6 +57,16 @@ export default class themeDesignUtilities extends Plugin {
 			id: "cycle-views",
 			name: "Cycle between Source Mode, Live Preview, and Reading Mode",
 			callback: () => this.cycleViews(),
+		});
+
+		this.addCommand({
+			id: "Chrome Version",
+			name: "CSS Feature Compatibility (Chrome Version)",
+			callback: () => {
+				const cversion = (process.versions.chrome).split(".")[0];
+
+				new Notice ("Obsidian supports CSS features compatible with:\nChrome Version" + cversion);
+			}
 		});
 	}
 
