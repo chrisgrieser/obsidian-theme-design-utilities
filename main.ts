@@ -64,7 +64,6 @@ export default class themeDesignUtilities extends Plugin {
 			name: "CSS Feature Compatibility (Chrome Version)",
 			callback: () => {
 				const cversion = (process.versions.chrome).split(".")[0];
-
 				new Notice ("Obsidian supports CSS features compatible with:\nChrome Version" + cversion);
 			}
 		});
@@ -88,7 +87,7 @@ export default class themeDesignUtilities extends Plugin {
 
 
 	cycleViews() {
-		const noticeDuration = 1500;
+		const noticeDuration = 2000;
 
 		const activePane = this.app.workspace.activeLeaf;
 		const currentView = activePane.getViewState();

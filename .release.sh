@@ -42,7 +42,7 @@ echo "}" >> temp
 mv temp versions.json
 
 # update changelog
-git log --pretty=format:"- %ad%x09%s" --date=short | egrep "\t\+|\trelease \d" > ./Changelog.md
+git log --pretty=format:"- %ad%x09%s" --date=short | grep -Ev "minor$" | grep -Ev "patch$" | grep -Ev "typos?$" | grep -v "refactoring" | grep -v "Add files via upload" | grep -Ev "\tDelete" | grep -Ev "\tUpdate.*\.md" | sed -E "s/\t\+ /\t/g" >> ./Changelog.md
 
 # push the manifest and versions JSONs
 git add -A
