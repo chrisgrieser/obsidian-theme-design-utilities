@@ -64,7 +64,7 @@ export default class themeDesignUtilities extends Plugin {
 			name: "CSS Feature Compatibility (Chrome Version)",
 			callback: () => {
 				const cversion = (process.versions.chrome).split(".")[0];
-				new Notice ("Obsidian supports CSS features compatible with:\nChrome Version" + cversion);
+				new Notice ("Obsidian supports CSS features compatible with:\nChrome Version " + cversion);
 			}
 		});
 	}
