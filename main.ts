@@ -85,7 +85,6 @@ export default class themeDesignUtilities extends Plugin {
 		}
 	}
 
-
 	cycleViews() {
 		const noticeDuration = 2000;
 

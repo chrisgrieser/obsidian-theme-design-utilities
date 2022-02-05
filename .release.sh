@@ -19,7 +19,9 @@ if [[ ! -f "./.github/workflows/release.yml" ]] ; then
 fi
 
 # Lint
+cd "$(dirname "$0")"
 eslint --fix *.ts
+markdownlint --fix *.md
 
 # get version number from the manifest of the latest release
 lastVersion=$(cat "./manifest.json" | grep "version" | cut -d\" -f4)
