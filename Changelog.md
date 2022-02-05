@@ -41,3 +41,39 @@
 - 2021-12-02	first prototype
 - 2021-12-02	version & manifest
 - 2021-12-02	Initial commit
+- 2022-02-05	release 0.15.0
+- 2022-02-05	new command: get css feature compatibility
+- 2022-01-08	🌟new command: Display compatibility of CSS features
+- 2022-01-05	release 0.14.1
+- 2022-01-05	shortend duration of notices when cycling between modes
+- 2022-01-05	release 0.14.0
+- 2022-01-05	✨new command: cycle between all three modes
+- 2022-01-05	updated eslint config
+- 2021-12-12	info on live preview added to issue template
+- 2021-12-09	update
+- 2021-12-09	release 0.13.0
+- 2021-12-09	better changelog
+- 2021-12-08	add print-preview plugin
+- 2021-12-07	release 0.12.2
+- 2021-12-07	implemented @Lishid feedback
+- 2021-12-06	fix
+- 2021-12-05	release 0.12.1
+- 2021-12-05	release 0.12.0
+- 2021-12-05	add freeze command
+- 2021-12-03	update eslintrc + readme
+- 2021-12-03	update other resources
+- 2021-12-03	update
+- 2021-12-03	add reference to garble text plugin
+- 2021-12-02	add license
+- 2021-12-02	add new command to readme
+- 2021-12-02	release 0.11.0
+- 2021-12-02	add cheatsheet command
+- 2021-12-02	add cheatsheets
+- 2021-12-02	release 0.10.0
+- 2021-12-02	merged the two emulation commands to one toggle command
+- 2021-12-02	release 0.9.0
+- 2021-12-02	description fixes
+- 2021-12-02	disable buttons till release
+- 2021-12-02	first prototype
+- 2021-12-02	version & manifest
+- 2021-12-02	Initial commit
