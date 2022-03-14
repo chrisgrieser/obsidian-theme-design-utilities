@@ -31,7 +31,7 @@ fi
 nextVersion="$*"
 currentVersion=$(grep "version" "./manifest.json" | cut -d\" -f4)
 echo "current version: $currentVersion"
-echo -n "next version: "
+echo -n "   next version: "
 if [[ -z "$nextVersion" ]]; then
 	read -r nextVersion
 else
