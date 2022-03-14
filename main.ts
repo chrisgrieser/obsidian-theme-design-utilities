@@ -18,8 +18,9 @@ export default class themeDesignUtilities extends Plugin {
 	async onload() {
 
 		console.log("Theme Design Utilities Plugin loaded.");
-
 		const freezeDelaySecs = 4;
+		const versionInfoNoticeDuration = 7;
+
 		this.addCommand({
 			id: "freeze-obsidian",
 			name: "Freeze Obsidian (with " + freezeDelaySecs.toString() + "s delay)",
@@ -60,11 +61,13 @@ export default class themeDesignUtilities extends Plugin {
 		});
 
 		this.addCommand({
-			id: "Chrome Version",
-			name: "CSS Feature Compatibility (Chrome Version)",
+			id: "version-info",
+			name: "CSS Feature Compatibility / Tech Stack Versions",
 			callback: () => {
-				const cversion = (process.versions.chrome).split(".")[0];
-				new Notice ("Obsidian supports CSS features compatible with:\nChrome Version " + cversion);
+				const chromeVersion = (process.versions.chrome).split(".")[0];
+				const nodeVersion = (process.versions.node).split(".")[0];
+				const electronVersion = (process.versions.electron).split(".")[0];
+				new Notice (`Chrome Version: ${chromeVersion}\nNode Version: ${nodeVersion}\nElectron Version: ${electronVersion}`, versionInfoNoticeDuration * 1000);
 			}
 		});
 	}
