@@ -45,11 +45,6 @@ eslint --fix ./*.ts
 markdownlint --fix ./*.md
 markdown-link-check -q ./README.md
 
-# Ask for new version number
-echo -n "next version: "
-read -r nextVersion
-echo ""
-
 # set version number in `manifest.json`
 sed -E -i '' "s/\"version\".*/\"version\": \"$nextVersion\",/" "manifest.json"
 sed -E -i '' "s/\"version\".*/\"version\": \"$nextVersion\",/" "package.json"
