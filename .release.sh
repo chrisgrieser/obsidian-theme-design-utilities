@@ -42,6 +42,7 @@ echo ""
 # Lint
 cd "$(dirname "$0")" || exit 1
 eslint --fix ./*.ts
+eslint --fix ./*/*.ts
 markdownlint --fix ./*.md
 markdown-link-check -q ./README.md
 
