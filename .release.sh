@@ -6,36 +6,39 @@
 
 # ensure relevant files exist
 if [[ ! -f "./manifest.json" ]] ; then
-	echo "manifest.json does not exist yet"
+	echo "manifest.json does not exist"
 	exit 1
 fi
 if [[ ! -f "./versions.json" ]] ; then
-	echo "versions.json does not exist yet"
+	echo "versions.json does not exist"
 	exit 1
 fi
 if [[ ! -f "./package.json" ]] ; then
-	echo "package.json does not exist yet"
+	echo "package.json does not exist"
 	exit 1
 fi
 if [[ ! -f "./.github/workflows/release.yml" ]] ; then
-	echo "/.github/workflows/release.yml does not exist yet"
+	echo "/.github/workflows/release.yml does not exist"
 	exit 1
 fi
+
+# Prompt for version number, if not entered
+nextVersion="$*"
+currentVersion=$(grep "version" "./manifest.json" | cut -d\" -f4)
+echo "current version: $currentVersion"
+echo -n "next version: "
+if [[ -z "$nextVersion" ]]; then
+	read -r nextVersion
+else
+	echo "$nextVersion"
+fi
+echo ""
 
 # Lint
 cd "$(dirname "$0")" || exit
 eslint --fix ./*.ts
 markdownlint --fix ./*.md # disable strong style since needed for complicated table
 markdown-link-check -q ./README.md
-
-# get version number from the manifest of the latest release
-lastVersion=$(grep "version" "./manifest.json" | cut -d\" -f4)
-echo "last version: $lastVersion"
-
-# Ask for new version number
-echo -n "next version: "
-read -r nextVersion
-echo ""
 
 # set version number in `manifest.json`
 sed -E -i '' "s/\"version\".*/\"version\": \"$nextVersion\",/" "manifest.json"
@@ -45,7 +48,7 @@ sed -E -i '' "s/\"version\".*/\"version\": \"$nextVersion\",/" "package.json"
 grep -Ev "^$" "versions.json" | grep -v "}" | sed -e '$ d' > temp
 minObsidianVersion=$(grep -Ev "^$" "versions.json" | grep -v "}" | tail -n1 | cut -d\" -f4)
 # shellcheck disable=SC2129
-echo "  \"$lastVersion\": \"$minObsidianVersion\"," >> temp
+echo "  \"$currentVersion\": \"$minObsidianVersion\"," >> temp
 echo "  \"$nextVersion\": \"$minObsidianVersion\"" >> temp
 echo "}" >> temp
 mv temp versions.json
