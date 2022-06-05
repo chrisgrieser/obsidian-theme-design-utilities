@@ -50,7 +50,8 @@ Post a notice (notification) that stays on screen until you click it. This is us
 A simple command to toggle between light and dark mode. Set a hotkey to quickly change the mode of the theme.
 
 ### CSS Feature Compatibility (Chrome Version)
-Will display a notice with the current Chrome version utilized by Obsidian to render CSS. Sites like [MDN](https://developer.mozilla.org/en-US/) or [W3-Schools](https://www.w3schools.com/cssref/css3_pr_overflow-y.asp) usually document the minimum Chrome version required for a certain CSS feature at the bottom of the feature's documentation page.
+- Will display a notice with the current Chrome version utilized by Obsidian to render CSS. Sites like [MDN](https://developer.mozilla.org/en-US/) or [W3-Schools](https://www.w3schools.com/cssref/css3_pr_overflow-y.asp) usually document the minimum Chrome version required for a certain CSS feature at the bottom of the feature's documentation page.
+- On iOS, Obsidian uses the Safari engine, for which the version matches the iOS version the user is using. Prevalence of iOS versions – and therefore underlying Safari versions to target – [are published by Apple itself](https://developer.apple.com/support/app-store/).
 
 ### Cheatsheet
 Open a cheat sheet showing the Obsidian CSS classes.
