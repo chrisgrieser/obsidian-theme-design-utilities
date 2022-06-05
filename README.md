@@ -53,16 +53,12 @@ A simple command to toggle between light and dark mode. Set a hotkey to quickly 
 - Will display a notice with the current Chrome version utilized by Obsidian to render CSS. Sites like [MDN](https://developer.mozilla.org/en-US/) or [W3-Schools](https://www.w3schools.com/cssref/css3_pr_overflow-y.asp) usually document the minimum Chrome version required for a certain CSS feature at the bottom of the feature's documentation page.
 - On iOS, Obsidian uses the Safari engine, for which the version matches the iOS version the user is using. Prevalence of iOS versions – and therefore underlying Safari versions to target – [are published by Apple itself](https://developer.apple.com/support/app-store/).
 
-If you are using [stylelint](https://stylelint.io/), you can also simply use the nifty `no-unsopported-browsers` stylelint-plugin, and add this to your `.stylelintrc.json`:
+If you are using [stylelint](https://stylelint.io/), you can also simply use the nifty [stylelint-no-unsupported-browser-features plugin](https://www.npmjs.com/package/stylelint-no-unsupported-browser-features), and add this to your `.stylelintrc.json`:
 
 ```json
 {
 	"extends": ["stylelint-config-recommended"],
-	"plugins": [
-		"stylelint-order",
-		"stylelint-declaration-block-no-ignored-properties",
-		"stylelint-no-unsupported-browser-features"
-	],
+	"plugins": ["stylelint-no-unsupported-browser-features"],
 	"rules": [
 		"plugin/no-unsupported-browser-features": [true, {
 			"browsers": ["last 10 Chrome versions", "last 3 iOS versions"],
