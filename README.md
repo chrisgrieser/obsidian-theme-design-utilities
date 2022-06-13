@@ -10,9 +10,10 @@ Some utilities and Quality-of-Life features for designers of [Obsidian](https://
 - [Commands Added](#commands-added)
 	- [Mobile Emulation](#mobile-emulation)
 	- [Cycle between All Three Modes](#cycle-between-all-three-modes)
+	- [Cycle between all installed Themes](#cycle-between-all-installed-themes)
+	- [Light/Dark Mode Toggle](#lightdark-mode-toggle)
 	- [Freeze Obsidian](#freeze-obsidian)
 	- [Permanent Test Notice](#permanent-test-notice)
-	- [Light/Dark Mode Toggle](#lightdark-mode-toggle)
 	- [CSS Feature Compatibility \(Chrome Version\)](#css-feature-compatibility-chrome-version)
 	- [Cheatsheet](#cheatsheet)
 - [Other Resources for Obsidian Theme Designers](#other-resources-for-obsidian-theme-designers)
@@ -34,6 +35,12 @@ Conveniently enable the mobile emulation of Obsidian, i.e. how Obsidian would lo
 ### Cycle between All Three Modes
 Cycles between Source Mode, Live Preview, and Reading Mode. Set a hotkey to quickly check how the theme looks in all three view modes.
 
+### Cycle between all installed Themes
+Cycles between all installed themes. As opposed to the Theme Switcher Plugin, this does not open a modal, but rather directly switches to the next installed theme.
+
+### Light/Dark Mode Toggle
+A simple command to toggle between light and dark mode. Set a hotkey to quickly change the mode of the theme.
+
 <img src="https://user-images.githubusercontent.com/73286100/148293043-c16e8d32-489d-4f14-9b26-9d00c6a83901.gif" alt="Screen Recording 2022-01-05 at 22 36 10" width=60%>
 
 ### Freeze Obsidian
@@ -45,9 +52,6 @@ Freeze interaction with Obsidian, after a small delay. During that delay, you ca
 Post a notice (notification) that stays on screen until you click it. This is useful for styling notices, as they normally quickly fade away.
 
 <img width=40% alt="Screenshot 2022-01-05 22 28 09" src="https://user-images.githubusercontent.com/73286100/148292139-86847227-5048-41e4-a6dc-768e4b54728b.png">
-
-### Light/Dark Mode Toggle
-A simple command to toggle between light and dark mode. Set a hotkey to quickly change the mode of the theme.
 
 ### CSS Feature Compatibility (Chrome Version)
 - Will display a notice with the current Chrome version utilized by Obsidian to render CSS. Sites like [MDN](https://developer.mozilla.org/en-US/) or [W3-Schools](https://www.w3schools.com/cssref/css3_pr_overflow-y.asp) usually document the minimum Chrome version required for a certain CSS feature at the bottom of the feature's documentation page.

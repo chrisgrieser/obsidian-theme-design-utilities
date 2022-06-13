@@ -3,9 +3,14 @@ import { Notice, Plugin } from "obsidian";
 // add type safety for the undocumented methods
 declare module "obsidian" {
 	interface App {
-		isMobile: () => void;
+		isMobile: () => boolean;
 		emulateMobile: (toggle: boolean) => void;
-		setTheme: (theme: string) => void;
+		setTheme: (mode: string) => void; // dark mode
+		customCss: {
+			setTheme: (theme: string) => void; // sets theme
+			theme: string; // get current theme
+			themes: string[]; // get installed themes
+		};
 	}
 	interface Vault {
 		setConfig: (config: string, newValue: string) => void;
@@ -51,13 +56,19 @@ export default class themeDesignUtilities extends Plugin {
 		this.addCommand({
 			id: "toggle-dark-light-mode",
 			name: "Toggle between Dark and Light Mode",
-			callback: () => this.toggleTheme(),
+			callback: () => this.toggleDarkMode(),
 		});
 
 		this.addCommand({
 			id: "cycle-views",
 			name: "Cycle between Source Mode, Live Preview, and Reading Mode",
 			callback: () => this.cycleViews(),
+		});
+
+		this.addCommand({
+			id: "cycle-themes",
+			name: "Cycle between the installed themes",
+			callback: () => this.cycleThemes(),
 		});
 
 		this.addCommand({
@@ -74,8 +85,24 @@ export default class themeDesignUtilities extends Plugin {
 
 	async onunload() { console.log("Theme Design Utilities Plugin unloaded.") }
 
+	cycleThemes() {
+		const currentTheme = this.app.customCss.theme;
+		const installedThemes = [...this.app.customCss.themes]; // spreading, so the push next line doesn't modify `app.customCss.themes`
+		installedThemes.push(""); // "" = default theme
 
-	toggleTheme() {
+		if (installedThemes.length === 1) {
+			new Notice ("Cannot cycle themes since no theme is installed in this vault.");
+			return;
+		}
+
+		let indexOfNextTheme = installedThemes.indexOf(currentTheme) + 1;
+		if (indexOfNextTheme === installedThemes.length) indexOfNextTheme = 0;
+
+		const nextTheme = installedThemes[indexOfNextTheme];
+		this.app.customCss.setTheme(nextTheme);
+	}
+
+	toggleDarkMode() {
 		const isDarkMode = this.app.vault.getConfig("theme") === "obsidian";
 		if (isDarkMode) {
 			this.app.setTheme("moonstone");
