@@ -38,7 +38,7 @@ Cycles between Source Mode, Live Preview, and Reading Mode. Set a hotkey to quic
 ### Cycle through Installed Themes
 Cycles between all installed themes. As opposed to the Theme Switcher Plugin, this does not open a modal, but rather directly switches to the next installed theme.
 
-<img width=60% alt="Theme Cycling Demo" src="demo/cycler.gif">
+<img width=60% alt="Theme Cycling Demo" src="demo/theme-cycler.gif">
 
 ### Light/Dark Mode Toggle
 A simple command to toggle between light and dark mode. Set a hotkey to quickly change the mode of the theme.
