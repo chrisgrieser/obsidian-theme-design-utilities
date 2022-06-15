@@ -10,7 +10,7 @@ Some utilities and Quality-of-Life features for designers of [Obsidian](https://
 - [Commands Added](#commands-added)
 	- [Mobile Emulation](#mobile-emulation)
 	- [Cycle between All Three Modes](#cycle-between-all-three-modes)
-	- [Cycle between all installed Themes](#cycle-between-all-installed-themes)
+	- [Cycle through Installed Themes](#cycle-through-installed-themes)
 	- [Light/Dark Mode Toggle](#lightdark-mode-toggle)
 	- [Freeze Obsidian](#freeze-obsidian)
 	- [Permanent Test Notice](#permanent-test-notice)
@@ -35,8 +35,10 @@ Conveniently enable the mobile emulation of Obsidian, i.e. how Obsidian would lo
 ### Cycle between All Three Modes
 Cycles between Source Mode, Live Preview, and Reading Mode. Set a hotkey to quickly check how the theme looks in all three view modes.
 
-### Cycle between all installed Themes
+### Cycle through Installed Themes
 Cycles between all installed themes. As opposed to the Theme Switcher Plugin, this does not open a modal, but rather directly switches to the next installed theme.
+
+<img width=60% alt="Theme Cycling Demo" src="demo/cycler.gif">
 
 ### Light/Dark Mode Toggle
 A simple command to toggle between light and dark mode. Set a hotkey to quickly change the mode of the theme.
