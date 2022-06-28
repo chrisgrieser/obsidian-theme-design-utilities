@@ -19,6 +19,7 @@ declare module "obsidian" {
 }
 
 export default class themeDesignUtilities extends Plugin {
+	styleEl: HTMLElement;
 
 	async onload() {
 
@@ -69,6 +70,12 @@ export default class themeDesignUtilities extends Plugin {
 			id: "cycle-themes",
 			name: "Cycle between the installed themes",
 			callback: () => this.cycleThemes(),
+		});
+
+		this.addCommand({
+			id: "debugging-outline",
+			name: "Toggle Red Outlines for Debugging",
+			callback: () => this.toggleDebuggingCSS(),
 		});
 
 		this.addCommand({
@@ -149,6 +156,23 @@ export default class themeDesignUtilities extends Plugin {
 		}
 
 		activePane.setViewState(newMode);
+	}
+
+	// thanks @NothingIsLost
+	toggleDebuggingCSS() {
+		const currentCSS = this.styleEl?.textContent;
+		let cssToApply = "";
+
+		if (!currentCSS) {
+			cssToApply = "* {outline: red 1px solid !important}";
+			this.styleEl = document.createElement("style");
+			this.styleEl.setAttribute("type", "text/css");
+			document.head.appendChild(this.styleEl);
+			this.register(() => this.styleEl.detach());
+		}
+
+		this.styleEl.textContent = cssToApply;
+		this.app.workspace.trigger("css-change");
 	}
 
 }
