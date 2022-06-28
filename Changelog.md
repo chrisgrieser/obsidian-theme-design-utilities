@@ -1,3 +1,4 @@
+- 2022-06-28	release 0.18.1
 - 2022-06-28	release 0.18.0
 - 2022-06-28	add cmd for toggling red outlines on everything
 - 2022-06-14	release 0.17.0
