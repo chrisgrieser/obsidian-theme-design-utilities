@@ -9,7 +9,8 @@ declare module "obsidian" {
 		customCss: {
 			setTheme: (theme: string) => void; // sets theme
 			theme: string; // get current theme
-			themes: string[]; // get installed themes
+			themes: unknown[]; // get installed themes
+			oldThemes: string[]; // get legacy themes (prior to 0.16)
 		};
 	}
 	interface Vault {
@@ -94,13 +95,16 @@ export default class themeDesignUtilities extends Plugin {
 
 	cycleThemes() {
 		const currentTheme = this.app.customCss.theme;
-		const installedThemes = [...this.app.customCss.themes]; // spreading, so the push next line doesn't modify `app.customCss.themes`
-		installedThemes.push(""); // "" = default theme
-
-		if (installedThemes.length === 1) {
-			new Notice ("Cannot cycle themes since no theme is installed in this vault.");
+		const installedThemes = [
+			...Object.keys(this.app.customCss.themes),
+			...this.app.customCss.oldThemes
+		];
+		if (installedThemes.length === 0) {
+			new Notice ("Cannot cycle themes since no community theme is installed.");
 			return;
 		}
+
+		installedThemes.push(""); // "" = default theme
 
 		let indexOfNextTheme = installedThemes.indexOf(currentTheme) + 1;
 		if (indexOfNextTheme === installedThemes.length) indexOfNextTheme = 0;
