@@ -1,3 +1,5 @@
+- 2022-09-20	release 0.19.0
+- 2022-09-20	new commands: farble text & foobar testclass
 - 2022-08-31	release 0.18.3
 - 2022-08-31	fix theme cycling for Obsidian 0.16
 - 2022-06-28	release 0.18.2
