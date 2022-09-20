@@ -12,6 +12,15 @@ declare module "obsidian" {
 			themes: unknown[]; // get installed themes
 			oldThemes: string[]; // get legacy themes (prior to 0.16)
 		};
+		dom: {
+			appContainerEl: {
+				addClass: (cssclass: string) => void;
+				classList: {
+					value: string;
+				};
+				removeClass: (cssclass: string) => void;
+			}
+		};
 	}
 	interface Vault {
 		setConfig: (config: string, newValue: string) => void;
@@ -77,6 +86,18 @@ export default class themeDesignUtilities extends Plugin {
 			id: "debugging-outline",
 			name: "Toggle Red Outlines for Debugging",
 			callback: () => this.toggleDebuggingCSS(),
+		});
+
+		this.addCommand({
+			id: "toggle-garbled-text",
+			name: "Toggle Garbled Text",
+			callback: () => this.toggleGarbleText(),
+		});
+
+		this.addCommand({
+			id: "test-body-class",
+			name: "Toggle class \".foobar\" for .app-container",
+			callback: () => this.toggleTestClass(),
 		});
 
 		this.addCommand({
@@ -177,6 +198,28 @@ export default class themeDesignUtilities extends Plugin {
 
 		this.styleEl.textContent = cssToApply;
 		this.app.workspace.trigger("css-change");
+	}
+
+	toggleGarbleText() {
+		const currentCSS = this.styleEl?.textContent;
+		let cssToApply = "";
+
+		if (!currentCSS) {
+			cssToApply = "body *:not(:hover) { font-family: Flow Circular !important; }";
+			this.styleEl = document.createElement("style");
+			this.styleEl.setAttribute("type", "text/css");
+			document.head.appendChild(this.styleEl);
+			this.register(() => this.styleEl.detach());
+		}
+
+		this.styleEl.textContent = cssToApply;
+		this.app.workspace.trigger("css-change");
+	}
+
+	toggleTestClass() {
+		const foobarActive = this.app.dom.appContainerEl.classList.value.includes("foobar");
+		if (foobarActive) this.app.dom.appContainerEl.removeClass("foobar");
+		else this.app.dom.appContainerEl.addClass("foobar");
 	}
 
 }
