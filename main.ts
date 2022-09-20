@@ -112,7 +112,10 @@ export default class themeDesignUtilities extends Plugin {
 		});
 	}
 
-	async onunload() { console.log("Theme Design Utilities Plugin unloaded.") }
+	async onunload() {
+		console.log("Theme Design Utilities Plugin unloaded.");
+		this.app.dom.appContainerEl.removeClass("foobar");
+	}
 
 	cycleThemes() {
 		const currentTheme = this.app.customCss.theme;

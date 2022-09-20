@@ -5,28 +5,28 @@
 Some utilities and Quality-of-Life features for designers of [Obsidian](https://obsidian.md/) themes.
 
 ## Table of Content
-<!-- MarkdownTOC -->
+<!--toc:start-->
+  - [Commands Added](#commands-added)
+    - [Mobile Emulation](#mobile-emulation)
+    - [Cycle between All Three Modes](#cycle-between-all-three-modes)
+    - [Cycle through Installed Themes](#cycle-through-installed-themes)
+    - [Light/Dark Mode Toggle](#lightdark-mode-toggle)
+    - [Freeze Obsidian](#freeze-obsidian)
+    - [Red Outlines for Debugging](#red-outlines-for-debugging)
+    - [Permanent Test Notice](#permanent-test-notice)
+    - [CSS Feature Compatibility (Chrome Version)](#css-feature-compatibility-chrome-version)
+    - [Cheatsheet](#cheatsheet)
+  - [Other Resources for Obsidian Theme Designers](#other-resources-for-obsidian-theme-designers)
+    - [Obsidian Plugins](#obsidian-plugins)
+    - [Guides](#guides)
+  - [Installation](#installation)
+  - [Contribute](#contribute)
+  - [About the Developer](#about-the-developer)
+    - [Profiles](#profiles)
+    - [Donate](#donate)
+<!--toc:end-->
 
-- [Commands Added](#commands-added)
-	- [Mobile Emulation](#mobile-emulation)
-	- [Cycle between All Three Modes](#cycle-between-all-three-modes)
-	- [Cycle through Installed Themes](#cycle-through-installed-themes)
-	- [Light/Dark Mode Toggle](#lightdark-mode-toggle)
-	- [Freeze Obsidian](#freeze-obsidian)
-	- [Red Outlines for Debugging](#red-outlines-for-debugging)
-	- [Permanent Test Notice](#permanent-test-notice)
-	- [CSS Feature Compatibility \(Chrome Version\)](#css-feature-compatibility-chrome-version)
-	- [Cheatsheet](#cheatsheet)
-- [Other Resources for Obsidian Theme Designers](#other-resources-for-obsidian-theme-designers)
-	- [Obsidian Plugins](#obsidian-plugins)
-	- [Guides](#guides)
-- [Installation](#installation)
-- [Contribute](#contribute)
-- [About the Developer](#about-the-developer)
-	- [Profiles](#profiles)
-	- [Donate](#donate)
 
-<!-- /MarkdownTOC -->
 
 ## Commands Added
 
@@ -50,6 +50,18 @@ A simple command to toggle between light and dark mode. Set a hotkey to quickly 
 Freeze interaction with Obsidian, after a small delay. During that delay, you can create fleeting elements like context menus or tooltips which will stay on screen. (Note that this only works while the console is open.) To unfreeze Obsidian, simply click the "play" button which appears at the top of Obsidian.
 
 <img src="https://user-images.githubusercontent.com/73286100/144731519-2f64352e-5264-45c3-bb3c-eb05c56a8322.png" alt="image" width=25%>
+
+### Garble Text
+Garbles all text in the whole app. Ungarbles elements that are hovered. This way you can share screenshots without ugly blurring. 
+
+### `.foobar` Test Class
+This command adds/removes a test class `.foobar` to the DOM to the element `.app-container`. This way you can quickly toggle some on-and-off for debugging purposes, without having to enable/disable a snippet.
+
+```css
+.app-container.foobar h1 {
+	color: red;
+}
+```
 
 ### Red Outlines for Debugging
 Add red outlines to all elements. Run the command again to remove the outlines. THe outlines are useful for debugging purposes, [essentially serving as the CSS equivalent for `console.log()`](https://www.youtube.com/shorts/ii-lSK2_Nu4).
@@ -89,15 +101,14 @@ Open a cheat sheet showing the Obsidian CSS classes.
 ### Obsidian Plugins
 - [My Snippets](https://github.com/chetachiezikeuzor/MySnippets-Plugin)
 - [Snippet Commands](https://github.com/deathau/snippet-commands-obsidian)
-- [BRAT](https://github.com/TfTHacker/obsidian42-brat#themes)
 - [Theme Picker](https://github.com/kenset/obsidian-theme-picker)
-- [Garble Text](https://github.com/kurakart/garble-text)
 - [Print Preview](https://github.com/nothingislost/obsidian-print-preview) (unlisted)
 
 ### Guides
 - [Overview of Resources and Guides for Theme Designers](https://publish.obsidian.md/hub/04+-+Guides%2C+Workflows%2C+%26+Courses/Guides/Resources+and+Guides+for+Theme+Designers)
 - [Why and How to use Stylelint for your Obsidian Theme](https://publish.obsidian.md/hub/04+-+Guides%2C+Workflows%2C+%26+Courses/Guides/Why+and+How+to+use+Stylelint+for+your+Obsidian+Theme)
 - [Want some Sass with your obsidian theme? Here's How and Why](https://publish.obsidian.md/hub/04+-+Guides%2C+Workflows%2C+%26+Courses/Guides/Want+some+Sass+with+your+obsidian+theme%E2%80%BD+here's+How+and+Why)
+- [How to Use Obsidian 0.16 CSS Variables](https://publish.obsidian.md/hub/04+-+Guides%2C+Workflows%2C+%26+Courses/Guides/Want+some+Sass+with+your+obsidian+theme%E2%80%BD+here's+How+and+Why)
 
 ## Installation
 This plugin is available in Obsidian's Community Plugin Browser: `Settings` → `Community Plugins` → `Browse` → Search for *"Theme Design Utilities"*
