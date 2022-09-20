@@ -5,7 +5,6 @@
 # https://marcus.se.net/obsidian-plugin-docs/publishing/release-your-plugin-with-github-actions
 
 # Requirements
-# - markdownlint
 # - eslint
 
 # ensure relevant files exist
@@ -41,7 +40,6 @@ echo ""
 # Lint
 cd "$(dirname "$0")" || exit 1
 eslint . --fix --ext=ts # to not lint the main.js files
-markdownlint --fix ./README.md
 
 # set version number in `manifest.json`
 sed -E -i '' "s/\"version\".*/\"version\": \"$nextVersion\",/" "manifest.json"
