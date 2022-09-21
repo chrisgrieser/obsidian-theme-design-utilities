@@ -27,7 +27,6 @@ Some utilities and Quality-of-Life features for designers of [Obsidian](https://
 <!--toc:end-->
 
 
-
 ## Commands Added
 
 ### Mobile Emulation
@@ -52,10 +51,10 @@ Freeze interaction with Obsidian, after a small delay. During that delay, you ca
 <img src="https://user-images.githubusercontent.com/73286100/144731519-2f64352e-5264-45c3-bb3c-eb05c56a8322.png" alt="image" width=25%>
 
 ### Garble Text
-Garbles all text in the whole app. Ungarbles elements that are hovered. This way you can share screenshots without ugly blurring. 
+Garbles all text in the whole app. Ungarbles elements that are hovered. This way you can share screenshots while maintaining privacy. 
 
 ### `.foobar` Test Class
-This command adds/removes a test class `.foobar` to the DOM to the element `.app-container`. This way you can quickly toggle some on-and-off for debugging purposes, without having to enable/disable a snippet.
+This command adds/removes a test class `.foobar` to the DOM-element `.app-container`. This way you can quickly toggle some CSS on-and-off for debugging purposes, without having to enable/disable a snippet.
 
 ```css
 .app-container.foobar h1 {
