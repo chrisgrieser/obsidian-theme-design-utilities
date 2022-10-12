@@ -1,3 +1,8 @@
+- 2022-10-12	release 0.20.0
+- 2022-10-12	changes for color playground
+- 2022-10-12	Merge pull request #5 from Evelf/color-playground
+- 2022-10-11	Adds colorplayground notes, snippet, documentation and screenshots
+- 2022-10-11	setup styles.css
 - 2022-09-20	release 0.19.0
 - 2022-09-20	new commands: farble text & foobar testclass
 - 2022-08-31	release 0.18.3
