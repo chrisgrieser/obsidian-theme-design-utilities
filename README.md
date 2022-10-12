@@ -16,6 +16,10 @@ Some utilities and Quality-of-Life features for designers of [Obsidian](https://
     - [Permanent Test Notice](#permanent-test-notice)
     - [CSS Feature Compatibility (Chrome Version)](#css-feature-compatibility-chrome-version)
     - [Cheatsheet](#cheatsheet)
+  - [Documentation and sample notes](#documentation-and-sample-notes)
+    - [Cheatsheets](#cheatsheets)
+    - [Markdown note: display your current theme colors](#markdown-note-display-your-current-theme-colors)
+    - [Markdown note and CSS snippet: play with colors](#markdown-note-and-css-snippet-play-with-colors)
   - [Other Resources for Obsidian Theme Designers](#other-resources-for-obsidian-theme-designers)
     - [Obsidian Plugins](#obsidian-plugins)
     - [Guides](#guides)
@@ -94,6 +98,22 @@ If you are using [stylelint](https://stylelint.io/), you can also simply use the
 Open a cheat sheet showing the Obsidian CSS classes.
 
 <img src="./cheatsheets/css-classes.png" alt="Obsidian API Model" width=40%>
+
+## Documentation and sample notes
+You can access these resources without installing the plugin.
+
+### Cheatsheets
+You can get various obsidian design cheatsheets from the [cheatsheets folder](https://github.com/chrisgrieser/obsidian-theme-design-utilities/tree/main/cheatsheets).
+
+### Markdown note: display your current theme colors
+The [theme-design-utilities-current_theme.md](https://github.com/chrisgrieser/obsidian-theme-design-utilities/tree/main/color-playground/theme-design-utilities-current_theme.md) mardown note can be added to your vault to display your current theme colors.
+
+<img src="./demo/color-playground_note-current_theme-screenshot.png" alt="currrent_theme colors note, screenshots" width=40%>
+
+### Markdown note and CSS snippet: play with colors
+The [theme-design-utilities-colorplay.md](https://github.com/chrisgrieser/obsidian-theme-design-utilities/tree/main/color-playground/theme-design-utilities-colorplay.md) mardown note and its [companion CSS snippet](https://github.com/chrisgrieser/obsidian-theme-design-utilities/tree/main/color-playground/theme-design-utilities-colorplay.md) display colored boxes. The note should be added to your vault, and the CSS snippet to your snippet collection. You can change the colors by edditing the CSS snippet, or using the [Style Settings plugin](https://github.com/mgmeyers/obsidian-style-settings).
+
+<img src="./demo/color-playground_note-colorplay-screenshot.png" alt="colorplay colors note, screenshot" width=40%>
 
 ## Other Resources for Obsidian Theme Designers
 
