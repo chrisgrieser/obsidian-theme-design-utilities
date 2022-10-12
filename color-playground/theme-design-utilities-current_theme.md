@@ -1,6 +1,4 @@
-**This note shows the colors of your current theme.**
-
-----
+## This note shows the colors of your current theme
 
 <div style="display: grid;grid-template-columns: repeat(3, 1fr); gap: 0.2em;">
   <!-- Don't put new lines in this div, or obsidian will render blocks which will break the layout -->

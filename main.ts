@@ -65,6 +65,12 @@ export default class themeDesignUtilities extends Plugin {
 		});
 
 		this.addCommand({
+			id: "color-playground",
+			name: "Open GitHub Folder with Color Playground files to download",
+			callback: () => window.open("https://github.com/chrisgrieser/obsidian-theme-design-utilities/tree/main/color-playground"),
+		});
+
+		this.addCommand({
 			id: "toggle-dark-light-mode",
 			name: "Toggle between Dark and Light Mode",
 			callback: () => this.toggleDarkMode(),
