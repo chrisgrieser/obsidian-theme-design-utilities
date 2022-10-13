@@ -1,3 +1,5 @@
+- 2022-10-14	release 0.20.1
+- 2022-10-14	properly include styles.css in release action
 - 2022-10-12	release 0.20.0
 - 2022-10-12	changes for color playground
 - 2022-10-12	Merge pull request #5 from Evelf/color-playground
