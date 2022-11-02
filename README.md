@@ -1,6 +1,6 @@
 # Theme Design Utilities
 
-![](https://img.shields.io/github/downloads/chrisgrieser/obsidian-theme-design-utilities/total?label=Total%20Downloads&style=plastic) ![](https://img.shields.io/github/v/release/chrisgrieser/obsidian-theme-design-utilities?label=Latest%20Release&style=plastic) [![](https://img.shields.io/badge/changelog-click%20here-FFE800?style=plastic)](Changelog.md)
+![Obsidian Downloads](https://img.shields.io/badge/dynamic/json?logo=obsidian&color=%23483699&label=downloads&query=%24%5B%22obsidian-theme-design-utilities%22%5D.downloads&url=https%3A%2F%2Fraw.githubusercontent.com%2Fobsidianmd%2Fobsidian-releases%2Fmaster%2Fcommunity-plugin-stats.json&style=plastic) ![](https://img.shields.io/github/v/release/chrisgrieser/obsidian-theme-design-utilities?label=Latest%20Release&style=plastic) [![](https://img.shields.io/badge/changelog-click%20here-FFE800?style=plastic)](Changelog.md)
 
 Some utilities and Quality-of-Life features for designers of [Obsidian](https://obsidian.md/) themes.
 
@@ -55,7 +55,7 @@ Freeze interaction with Obsidian, after a small delay. During that delay, you ca
 <img src="https://user-images.githubusercontent.com/73286100/144731519-2f64352e-5264-45c3-bb3c-eb05c56a8322.png" alt="image" width=25%>
 
 ### Garble Text
-Garbles all text in the whole app. Ungarbles elements that are hovered. This way you can share screenshots while maintaining privacy. 
+Garbles all text in the whole app. Ungarbles elements that are hovered. This way you can share screenshots while maintaining privacy.
 
 ### `.foobar` Test Class
 This command adds/removes a test class `.foobar` to the DOM-element `.app-container`. This way you can quickly toggle some CSS on-and-off for debugging purposes, without having to enable/disable a snippet.
