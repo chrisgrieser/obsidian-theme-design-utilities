@@ -6,28 +6,30 @@ Some utilities and Quality-of-Life features for designers of [Obsidian](https://
 
 ## Table of Content
 <!--toc:start-->
-  - [Commands Added](#commands-added)
-    - [Mobile Emulation](#mobile-emulation)
-    - [Cycle between All Three Modes](#cycle-between-all-three-modes)
-    - [Cycle through Installed Themes](#cycle-through-installed-themes)
-    - [Light/Dark Mode Toggle](#lightdark-mode-toggle)
-    - [Freeze Obsidian](#freeze-obsidian)
-    - [Red Outlines for Debugging](#red-outlines-for-debugging)
-    - [Permanent Test Notice](#permanent-test-notice)
-    - [CSS Feature Compatibility (Chrome Version)](#css-feature-compatibility-chrome-version)
-    - [Cheatsheet](#cheatsheet)
-  - [Documentation and sample notes](#documentation-and-sample-notes)
-    - [Cheatsheets](#cheatsheets)
-    - [Markdown note: display your current theme colors](#markdown-note-display-your-current-theme-colors)
-    - [Markdown note and CSS snippet: play with colors](#markdown-note-and-css-snippet-play-with-colors)
-  - [Other Resources for Obsidian Theme Designers](#other-resources-for-obsidian-theme-designers)
-    - [Obsidian Plugins](#obsidian-plugins)
-    - [Guides](#guides)
-  - [Installation](#installation)
-  - [Contribute](#contribute)
-  - [About the Developer](#about-the-developer)
-    - [Profiles](#profiles)
-    - [Donate](#donate)
+- [Commands Added](#commands-added)
+  - [Mobile Emulation](#mobile-emulation)
+  - [Cycle between All Three Modes](#cycle-between-all-three-modes)
+  - [Cycle through Installed Themes](#cycle-through-installed-themes)
+  - [Light/Dark Mode Toggle](#lightdark-mode-toggle)
+  - [Freeze Obsidian](#freeze-obsidian)
+  - [Garble Text](#garble-text)
+  - [`.foobar` Test Class](#foobar-test-class)
+  - [Red Outlines for Debugging](#red-outlines-for-debugging)
+  - [Permanent Test Notice](#permanent-test-notice)
+  - [CSS Feature Compatibility (Chrome Version)](#css-feature-compatibility-chrome-version)
+  - [Cheatsheet](#cheatsheet)
+- [Documentation and sample notes](#documentation-and-sample-notes)
+  - [Cheatsheets](#cheatsheets)
+  - [Markdown note: display your current theme colors](#markdown-note-display-your-current-theme-colors)
+  - [Markdown note and CSS snippet: play with colors](#markdown-note-and-css-snippet-play-with-colors)
+- [Other Resources for Obsidian Theme Designers](#other-resources-for-obsidian-theme-designers)
+  - [Obsidian Plugins](#obsidian-plugins)
+  - [Guides](#guides)
+- [Installation](#installation)
+- [Contribute](#contribute)
+- [About the Developer](#about-the-developer)
+  - [Profiles](#profiles)
+  - [Buy me a Coffee](#buy-me-a-coffee)
 <!--toc:end-->
 
 
@@ -55,7 +57,7 @@ Freeze interaction with Obsidian, after a small delay. During that delay, you ca
 <img src="https://user-images.githubusercontent.com/73286100/144731519-2f64352e-5264-45c3-bb3c-eb05c56a8322.png" alt="image" width=25%>
 
 ### Garble Text
-Garbles all text in the whole app. Ungarbles elements that are hovered. This way you can share screenshots while maintaining privacy.
+Garbles all text in the whole app. "Ungarbles" elements that are hovered. This way you can share screenshots while maintaining privacy.
 
 ### `.foobar` Test Class
 This command adds/removes a test class `.foobar` to the DOM-element `.app-container`. This way you can quickly toggle some CSS on-and-off for debugging purposes, without having to enable/disable a snippet.
@@ -67,7 +69,7 @@ This command adds/removes a test class `.foobar` to the DOM-element `.app-contai
 ```
 
 ### Red Outlines for Debugging
-Add red outlines to all elements. Run the command again to remove the outlines. THe outlines are useful for debugging purposes, [essentially serving as the CSS equivalent for `console.log()`](https://www.youtube.com/shorts/ii-lSK2_Nu4).
+Add red outlines to all elements. Run the command again to remove the outlines. The outlines are useful for debugging purposes, [essentially serving as the CSS equivalent for `console.log()`](https://www.youtube.com/shorts/ii-lSK2_Nu4).
 
 ### Permanent Test Notice
 Post a notice (notification) that stays on screen until you click it. This is useful for styling notices, as they normally quickly fade away.
@@ -106,12 +108,12 @@ You can access these resources without installing the plugin.
 You can get various obsidian design cheatsheets from the [cheatsheets folder](https://github.com/chrisgrieser/obsidian-theme-design-utilities/tree/main/cheatsheets).
 
 ### Markdown note: display your current theme colors
-The [theme-design-utilities-current_theme.md](https://github.com/chrisgrieser/obsidian-theme-design-utilities/tree/main/color-playground/theme-design-utilities-current_theme.md) mardown note can be added to your vault to display your current theme colors.
+[`theme-design-utilities-current_theme.md`](https://github.com/chrisgrieser/obsidian-theme-design-utilities/tree/main/color-playground/theme-design-utilities-current_theme.md) is a markdown file that can be added to your vault to display your current theme colors.
 
 <img src="./demo/color-playground_note-current_theme-screenshot.png" alt="currrent_theme colors note, screenshots" width=40%>
 
 ### Markdown note and CSS snippet: play with colors
-The [theme-design-utilities-colorplay.md](https://github.com/chrisgrieser/obsidian-theme-design-utilities/tree/main/color-playground/theme-design-utilities-colorplay.md) mardown note and its [companion CSS snippet](https://github.com/chrisgrieser/obsidian-theme-design-utilities/tree/main/color-playground/theme-design-utilities-colorplay.md) display colored boxes. The note should be added to your vault, and the CSS snippet to your snippet collection. You can change the colors by edditing the CSS snippet, or using the [Style Settings plugin](https://github.com/mgmeyers/obsidian-style-settings).
+The [`theme-design-utilities-colorplay.md`](https://github.com/chrisgrieser/obsidian-theme-design-utilities/tree/main/color-playground/theme-design-utilities-colorplay.md) markdown note and its [companion CSS snippet](https://github.com/chrisgrieser/obsidian-theme-design-utilities/tree/main/color-playground/theme-design-utilities-colorplay.md) display colored boxes. The note should be added to your vault, and the CSS snippet to your snippet collection. You can change the colors by editing the CSS snippet, or using the [Style Settings plugin](https://github.com/mgmeyers/obsidian-style-settings).
 
 <img src="./demo/color-playground_note-colorplay-screenshot.png" alt="colorplay colors note, screenshot" width=40%>
 
@@ -127,13 +129,13 @@ The [theme-design-utilities-colorplay.md](https://github.com/chrisgrieser/obsidi
 - [Overview of Resources and Guides for Theme Designers](https://publish.obsidian.md/hub/04+-+Guides%2C+Workflows%2C+%26+Courses/Guides/Resources+and+Guides+for+Theme+Designers)
 - [Why and How to use Stylelint for your Obsidian Theme](https://publish.obsidian.md/hub/04+-+Guides%2C+Workflows%2C+%26+Courses/Guides/Why+and+How+to+use+Stylelint+for+your+Obsidian+Theme)
 - [Want some Sass with your obsidian theme? Here's How and Why](https://publish.obsidian.md/hub/04+-+Guides%2C+Workflows%2C+%26+Courses/Guides/Want+some+Sass+with+your+obsidian+theme%E2%80%BD+here's+How+and+Why)
-- [How to Use Obsidian 0.16 CSS Variables](https://publish.obsidian.md/hub/04+-+Guides%2C+Workflows%2C+%26+Courses/Guides/Want+some+Sass+with+your+obsidian+theme%E2%80%BD+here's+How+and+Why)
+- [How to Use Obsidian 1.0 CSS Variables](https://publish.obsidian.md/hub/04+-+Guides%2C+Workflows%2C+%26+Courses/Guides/Want+some+Sass+with+your+obsidian+theme%E2%80%BD+here's+How+and+Why)
 
 ## Installation
 This plugin is available in Obsidian's Community Plugin Browser: `Settings` → `Community Plugins` → `Browse` → Search for *"Theme Design Utilities"*
 
 ## Contribute
-Pull Requests adding more utilities are very welcome!
+Pull Requests adding more utilities are welcome.
 
 Please use the `.eslintrc` configuration located in the repository and run eslint before doing a pull request, though. 🙂
 
@@ -143,7 +145,7 @@ eslint --fix *.ts
 ```
 
 ## About the Developer
-In my day job, I am a sociologist studying the social mechanisms underlying the digital economy. For my PhD project, I investigate the governance of the app economy and how software ecosystems manage the tension between innovation and compatibility. If you are interested in this subject, feel free to get in touch!
+In my day job, I am a sociologist studying the social mechanisms underlying the digital economy. For my PhD project, I investigate the governance of the app economy and how software ecosystems manage the tension between innovation and compatibility. If you are interested in this subject, feel free to get in touch.
 
 <!-- markdown-link-check-disable -->
 ### Profiles
@@ -154,9 +156,5 @@ In my day job, I am a sociologist studying the social mechanisms underlying the 
 - [Twitter](https://twitter.com/pseudo_meta)
 - [LinkedIn](https://www.linkedin.com/in/christopher-grieser-ba693b17a/)
 
-### Donate
+### Buy me a Coffee
 <a href='https://ko-fi.com/Y8Y86SQ91' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://cdn.ko-fi.com/cdn/kofi1.png?v=3' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
-
-If you feel very generous, you may also buy me something from my Amazon wish list. But please donate something to developers who still go to college, before you consider buying me an item from my wish list! 😊
-
-[Amazon wish list](https://www.amazon.de/hz/wishlist/ls/2C7RIOJPN3K5F?ref_=wl_share)
