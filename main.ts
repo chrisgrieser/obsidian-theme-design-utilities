@@ -1,4 +1,4 @@
-import { Notice, Plugin } from "obsidian";
+import { MarkdownView, Notice, Plugin } from "obsidian";
 
 // add type safety for the undocumented methods
 declare module "obsidian" {
@@ -41,15 +41,15 @@ export default class themeDesignUtilities extends Plugin {
 			id: "freeze-obsidian",
 			name: "Freeze Obsidian (with " + freezeDelaySecs.toString() + "s delay)",
 			callback: () => {
-				new Notice ("Will freeze Obsidian in " + freezeDelaySecs.toString() + "s \n(if the console is open.)", (freezeDelaySecs - 1) * 1000);
-				setTimeout(() => {debugger}, freezeDelaySecs * 1000);
+				new Notice("Will freeze Obsidian in " + freezeDelaySecs.toString() + "s \n(if the console is open.)", (freezeDelaySecs - 1) * 1000);
+				setTimeout(() => { debugger }, freezeDelaySecs * 1000);
 			},
 		});
 
 		this.addCommand({
 			id: "test-notice",
 			name: "Test Notice",
-			callback: () => new Notice ("I am a test notice. 👋 \n\nI will stay here until you click me.", 0),
+			callback: () => new Notice("I am a test notice. 👋 \n\nI will stay here until you click me.", 0),
 		});
 
 		this.addCommand({
@@ -113,7 +113,7 @@ export default class themeDesignUtilities extends Plugin {
 				const chromeVersion = (process.versions.chrome).split(".")[0];
 				const nodeVersion = (process.versions.node).split(".")[0];
 				const electronVersion = (process.versions.electron).split(".")[0];
-				new Notice (`Chrome Version: ${chromeVersion}\nNode Version: ${nodeVersion}\nElectron Version: ${electronVersion}`, versionInfoNoticeDuration * 1000);
+				new Notice(`Chrome Version: ${chromeVersion}\nNode Version: ${nodeVersion}\nElectron Version: ${electronVersion}`, versionInfoNoticeDuration * 1000);
 			}
 		});
 	}
@@ -130,7 +130,7 @@ export default class themeDesignUtilities extends Plugin {
 			...this.app.customCss.oldThemes
 		];
 		if (installedThemes.length === 0) {
-			new Notice ("Cannot cycle themes since no community theme is installed.");
+			new Notice("Cannot cycle themes since no community theme is installed.");
 			return;
 		}
 
@@ -159,12 +159,14 @@ export default class themeDesignUtilities extends Plugin {
 	cycleViews() {
 		const noticeDuration = 2000;
 
-		const activePane = this.app.workspace.activeLeaf;
-		const currentView = activePane.getViewState();
-		if (currentView.type === "empty") {
-			new Notice ("There is currently no file open.");
+		const isMarkdownView = this.app.workspace.getActiveViewOfType(MarkdownView);
+		if (!isMarkdownView) {
+			new Notice("Not a regular note or no file open.");
 			return;
 		}
+
+		const activePane = this.app.workspace.activeLeaf;
+		const currentView = activePane.getViewState(); // won't be null since MarkdownView has been confirmed above
 
 		let currentMode: string;
 		if (currentView.state.mode === "preview") currentMode = "preview";
@@ -176,16 +178,16 @@ export default class themeDesignUtilities extends Plugin {
 			case "preview":
 				newMode.state.mode = "source";
 				newMode.state.source = true;
-				new Notice ("Now: Source Mode", noticeDuration);
+				new Notice("Now: Source Mode", noticeDuration);
 				break;
 			case "source":
 				newMode.state.mode = "source";
 				newMode.state.source = false;
-				new Notice ("Now: Live Preview", noticeDuration);
+				new Notice("Now: Live Preview", noticeDuration);
 				break;
 			case "live":
 				newMode.state.mode = "preview";
-				new Notice ("Now: Reading Mode", noticeDuration);
+				new Notice("Now: Reading Mode", noticeDuration);
 				break;
 		}
 
