@@ -1,3 +1,5 @@
+- 2022-11-04	release 0.20.2
+- 2022-11-04	fix #3
 - 2022-10-14	release 0.20.1
 - 2022-10-14	properly include styles.css in release action
 - 2022-10-12	release 0.20.0
