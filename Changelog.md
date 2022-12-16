@@ -1,3 +1,4 @@
+- 2022-12-16	release 0.20.4
 - 2022-12-05	release 0.20.3
 - 2022-12-05	add funding-url to manifest
 - 2022-11-04	release 0.20.2

@@ -41,7 +41,7 @@ export default class themeDesignUtilities extends Plugin {
 			id: "freeze-obsidian",
 			name: "Freeze Obsidian (with " + freezeDelaySecs.toString() + "s delay)",
 			callback: () => {
-				new Notice("Will freeze Obsidian in " + freezeDelaySecs.toString() + "s \n(if the console is open.)", (freezeDelaySecs - 1) * 1000);
+				new Notice("Will freeze Obsidian in " + freezeDelaySecs.toString() + "s \n(if the console is open).", (freezeDelaySecs - 1) * 1000);
 				setTimeout(() => { debugger }, freezeDelaySecs * 1000);
 			},
 		});
