@@ -44,6 +44,7 @@ export default class themeDesignUtilities extends Plugin {
 			callback: () => {
 				new Notice("Will freeze Obsidian in " + freezeDelaySecs.toString() + "s", (freezeDelaySecs - 1) * 1000);
 				// @ts-ignore, no idea how to declare electronWindow 🙈
+				// https://www.electronjs.org/docs/latest/api/web-contents#contentsopendevtoolsoptions
 				electronWindow.openDevTools(); // devtools are required for the debugger to work
 				setTimeout(() => {
 					debugger; /* eslint-disable-line no-debugger */
