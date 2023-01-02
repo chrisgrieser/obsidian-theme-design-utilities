@@ -5,19 +5,23 @@
 Some utilities and Quality-of-Life features for designers of [Obsidian](https://obsidian.md/) themes.
 
 ## Table of Content
+
+
 <!--toc:start-->
+- [Table of Content](#table-of-content)
 - [Commands Added](#commands-added)
   - [Mobile Emulation](#mobile-emulation)
   - [Cycle between All Three Modes](#cycle-between-all-three-modes)
   - [Cycle through Installed Themes](#cycle-through-installed-themes)
   - [Light/Dark Mode Toggle](#lightdark-mode-toggle)
   - [Freeze Obsidian](#freeze-obsidian)
+  - [Toggle Devtools](#toggle-devtools)
   - [Garble Text](#garble-text)
   - [`.foobar` Test Class](#foobar-test-class)
   - [Red Outlines for Debugging](#red-outlines-for-debugging)
   - [Permanent Test Notice](#permanent-test-notice)
   - [CSS Feature Compatibility (Chrome Version)](#css-feature-compatibility-chrome-version)
-  - [Cheatsheet](#cheatsheet)
+  - [Show Cheatsheet](#show-cheatsheet)
 - [Documentation and sample notes](#documentation-and-sample-notes)
   - [Cheatsheets](#cheatsheets)
   - [Markdown note: display your current theme colors](#markdown-note-display-your-current-theme-colors)
