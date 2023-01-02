@@ -19,7 +19,7 @@ declare module "obsidian" {
 					value: string;
 				};
 				removeClass: (cssclass: string) => void;
-			}
+			};
 		};
 	}
 	interface Vault {
@@ -32,7 +32,6 @@ export default class themeDesignUtilities extends Plugin {
 	styleEl: HTMLElement;
 
 	async onload() {
-
 		console.log("Theme Design Utilities Plugin loaded.");
 		const freezeDelaySecs = 4;
 		const versionInfoNoticeDuration = 7;
@@ -41,8 +40,10 @@ export default class themeDesignUtilities extends Plugin {
 			id: "freeze-obsidian",
 			name: "Freeze Obsidian (with " + freezeDelaySecs.toString() + "s delay)",
 			callback: () => {
-				new Notice("Will freeze Obsidian in " + freezeDelaySecs.toString() + "s \n(if the console is open).", (freezeDelaySecs - 1) * 1000);
-				setTimeout(() => { debugger }, freezeDelaySecs * 1000);
+				new Notice("Will freeze Obsidian in " + freezeDelaySecs.toString() + "s", (freezeDelaySecs - 1) * 1000);
+				setTimeout(() => {
+					debugger;
+				}, freezeDelaySecs * 1000);
 			},
 		});
 
@@ -61,13 +62,17 @@ export default class themeDesignUtilities extends Plugin {
 		this.addCommand({
 			id: "cheatsheet-css-classes",
 			name: "Cheatsheet – Obsidian CSS Classes",
-			callback: () => window.open("https://raw.githubusercontent.com/chrisgrieser/obsidian-theme-design-utilities/master/cheatsheets/css-classes.png"),
+			callback: () =>
+				window.open(
+					"https://raw.githubusercontent.com/chrisgrieser/obsidian-theme-design-utilities/master/cheatsheets/css-classes.png"
+				),
 		});
 
 		this.addCommand({
 			id: "color-playground",
 			name: "Open GitHub Folder with Color Playground files to download",
-			callback: () => window.open("https://github.com/chrisgrieser/obsidian-theme-design-utilities/tree/main/color-playground"),
+			callback: () =>
+				window.open("https://github.com/chrisgrieser/obsidian-theme-design-utilities/tree/main/color-playground"),
 		});
 
 		this.addCommand({
@@ -110,11 +115,14 @@ export default class themeDesignUtilities extends Plugin {
 			id: "version-info",
 			name: "CSS Feature Compatibility / Tech Stack Versions",
 			callback: () => {
-				const chromeVersion = (process.versions.chrome).split(".")[0];
-				const nodeVersion = (process.versions.node).split(".")[0];
-				const electronVersion = (process.versions.electron).split(".")[0];
-				new Notice(`Chrome Version: ${chromeVersion}\nNode Version: ${nodeVersion}\nElectron Version: ${electronVersion}`, versionInfoNoticeDuration * 1000);
-			}
+				const chromeVersion = process.versions.chrome.split(".")[0];
+				const nodeVersion = process.versions.node.split(".")[0];
+				const electronVersion = process.versions.electron.split(".")[0];
+				new Notice(
+					`Chrome Version: ${chromeVersion}\nNode Version: ${nodeVersion}\nElectron Version: ${electronVersion}`,
+					versionInfoNoticeDuration * 1000
+				);
+			},
 		});
 	}
 
@@ -125,10 +133,7 @@ export default class themeDesignUtilities extends Plugin {
 
 	cycleThemes() {
 		const currentTheme = this.app.customCss.theme;
-		const installedThemes = [
-			...Object.keys(this.app.customCss.themes),
-			...this.app.customCss.oldThemes
-		];
+		const installedThemes = [...Object.keys(this.app.customCss.themes), ...this.app.customCss.oldThemes];
 		if (installedThemes.length === 0) {
 			new Notice("Cannot cycle themes since no community theme is installed.");
 			return;
@@ -232,5 +237,4 @@ export default class themeDesignUtilities extends Plugin {
 		if (foobarActive) this.app.dom.appContainerEl.removeClass("foobar");
 		else this.app.dom.appContainerEl.addClass("foobar");
 	}
-
 }
