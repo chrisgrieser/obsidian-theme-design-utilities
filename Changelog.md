@@ -1,3 +1,7 @@
+- 2023-01-02	release 0.21.0
+- 2023-01-02	feat: devtools cmd & freeze cmd opens devtools
+- 2023-01-02	style: adjustments to eslint config
+- 2023-01-02	style: lint
 - 2022-12-16	release 0.20.4
 - 2022-12-05	release 0.20.3
 - 2022-12-05	add funding-url to manifest
