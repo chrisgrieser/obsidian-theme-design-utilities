@@ -1,6 +1,7 @@
 import { MarkdownView, Notice, Plugin } from "obsidian";
 
 // add type safety for the undocumented methods
+/* eslint-disable no-unused-vars */
 declare module "obsidian" {
 	interface App {
 		isMobile: () => boolean;
@@ -27,6 +28,7 @@ declare module "obsidian" {
 		getConfig: (config: string) => string;
 	}
 }
+/* eslint-enable no-unused-vars */
 
 export default class themeDesignUtilities extends Plugin {
 	styleEl: HTMLElement;
@@ -42,7 +44,11 @@ export default class themeDesignUtilities extends Plugin {
 			callback: () => {
 				new Notice("Will freeze Obsidian in " + freezeDelaySecs.toString() + "s", (freezeDelaySecs - 1) * 1000);
 				setTimeout(() => {
-					debugger;
+					// @ts-ignore, no idea how to declare electronWindow 🙈
+					electronWindow.openDevTools();
+				});
+				setTimeout(() => {
+					debugger; /* eslint-disable-line no-debugger */
 				}, freezeDelaySecs * 1000);
 			},
 		});
@@ -64,7 +70,7 @@ export default class themeDesignUtilities extends Plugin {
 			name: "Cheatsheet – Obsidian CSS Classes",
 			callback: () =>
 				window.open(
-					"https://raw.githubusercontent.com/chrisgrieser/obsidian-theme-design-utilities/master/cheatsheets/css-classes.png"
+					"https://raw.githubusercontent.com/chrisgrieser/obsidian-theme-design-utilities/master/cheatsheets/css-classes.png",
 				),
 		});
 
@@ -107,7 +113,7 @@ export default class themeDesignUtilities extends Plugin {
 
 		this.addCommand({
 			id: "test-body-class",
-			name: "Toggle class \".foobar\" for .app-container",
+			name: 'Toggle class ".foobar" for .app-container',
 			callback: () => this.toggleTestClass(),
 		});
 
@@ -120,7 +126,7 @@ export default class themeDesignUtilities extends Plugin {
 				const electronVersion = process.versions.electron.split(".")[0];
 				new Notice(
 					`Chrome Version: ${chromeVersion}\nNode Version: ${nodeVersion}\nElectron Version: ${electronVersion}`,
-					versionInfoNoticeDuration * 1000
+					versionInfoNoticeDuration * 1000,
 				);
 			},
 		});
