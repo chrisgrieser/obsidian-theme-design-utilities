@@ -52,9 +52,14 @@ A simple command to toggle between light and dark mode. Set a hotkey to quickly 
 <img src="https://user-images.githubusercontent.com/73286100/148293043-c16e8d32-489d-4f14-9b26-9d00c6a83901.gif" alt="Screen Recording 2022-01-05 at 22 36 10" width=60%>
 
 ### Freeze Obsidian
-Freeze interaction with Obsidian, after a small delay. During that delay, you can create fleeting elements like context menus or tooltips which will stay on screen. (Note that this only works while the console is open.) To unfreeze Obsidian, simply click the "play" button which appears at the top of Obsidian.
+Opens the devtools and freeze interaction with Obsidian, after a small delay. During that delay, you can create fleeting elements like context menus or tooltips which will stay on screen.
+
+To unfreeze Obsidian, click the "play" button which appears at the top of Obsidian.
 
 <img src="https://user-images.githubusercontent.com/73286100/144731519-2f64352e-5264-45c3-bb3c-eb05c56a8322.png" alt="image" width=25%>
+
+### Toggle Devtools 
+Opens/closes the devtools (developer console). Does the same thing as Obsidian's builtin method of opening the devtools, but being available in the command palette allows you to set a custom hotkey for it.
 
 ### Garble Text
 Garbles all text in the whole app. "Ungarbles" elements that are hovered. This way you can share screenshots while maintaining privacy.
@@ -96,7 +101,7 @@ If you are using [stylelint](https://stylelint.io/), you can also simply use the
 }
 ```
 
-### Cheatsheet
+### Show Cheatsheet
 Open a cheat sheet showing the Obsidian CSS classes.
 
 <img src="./cheatsheets/css-classes.png" alt="Obsidian API Model" width=40%>

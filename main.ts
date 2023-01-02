@@ -43,14 +43,19 @@ export default class themeDesignUtilities extends Plugin {
 			name: "Freeze Obsidian (with " + freezeDelaySecs.toString() + "s delay)",
 			callback: () => {
 				new Notice("Will freeze Obsidian in " + freezeDelaySecs.toString() + "s", (freezeDelaySecs - 1) * 1000);
-				setTimeout(() => {
-					// @ts-ignore, no idea how to declare electronWindow 🙈
-					electronWindow.openDevTools();
-				});
+				// @ts-ignore, no idea how to declare electronWindow 🙈
+				electronWindow.openDevTools(); // devtools are required for the debugger to work
 				setTimeout(() => {
 					debugger; /* eslint-disable-line no-debugger */
 				}, freezeDelaySecs * 1000);
 			},
+		});
+
+		this.addCommand({
+			id: "toggle-devtools",
+			name: "Toggle Devtools",
+			// @ts-ignore, no idea how to declare electronWindow 🙈
+			callback: () => electronWindow.toggleDevTools(), // devtools are required for the debugger to work,
 		});
 
 		this.addCommand({
