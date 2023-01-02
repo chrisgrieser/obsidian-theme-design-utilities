@@ -5,8 +5,6 @@
 Some utilities and Quality-of-Life features for designers of [Obsidian](https://obsidian.md/) themes.
 
 ## Table of Content
-
-
 <!--toc:start-->
 - [Table of Content](#table-of-content)
 - [Commands Added](#commands-added)
