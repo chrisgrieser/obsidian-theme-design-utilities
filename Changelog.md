@@ -1,3 +1,8 @@
+- 2023-01-09	release 0.21.1
+- 2023-01-02	chore
+- 2023-01-02	chore
+- 2023-01-02	chore
+- 2023-01-02	chore
 - 2023-01-02	release 0.21.0
 - 2023-01-02	feat: devtools cmd & freeze cmd opens devtools
 - 2023-01-02	style: adjustments to eslint config
