@@ -128,9 +128,9 @@ The [`theme-design-utilities-colorplay.md`](https://github.com/chrisgrieser/obsi
 
 ### Obsidian Plugins
 - [My Snippets](https://github.com/chetachiezikeuzor/MySnippets-Plugin)
-- [Snippet Commands](https://github.com/deathau/snippet-commands-obsidian)
 - [Theme Picker](https://github.com/kenset/obsidian-theme-picker)
 - [Print Preview](https://github.com/nothingislost/obsidian-print-preview) (unlisted)
+- [Theme Hot-Reload](https://github.com/mProjectsCode/obsidian-theme-hot-reload-plugin)
 
 ### Guides
 - [Overview of Resources and Guides for Theme Designers](https://publish.obsidian.md/hub/04+-+Guides%2C+Workflows%2C+%26+Courses/Guides/Resources+and+Guides+for+Theme+Designers)
