@@ -1,0 +1,40 @@
+{
+	"$schema": "https://raw.githubusercontent.com/rome/tools/main/npm/rome/configuration_schema.json",
+	"formatter": {
+		"enabled": true,
+		"lineWidth": 120,
+		"indentStyle": "tab",
+		"indentSize": 3,
+		"formatWithErrors": true
+	},
+	"javascript": {
+		"globals": [
+			"electronWindow"
+		]
+	},
+	"files": {
+		"ignore": [
+			"main.js",
+			"dist/**",
+			"node_modules/**"
+		]
+	},
+	"organizeImports": {
+		"enabled": true
+	},
+	"linter": {
+		"enabled": true,
+		"rules": {
+			"all": true,
+			"style": {
+				"useBlockStatements": "off",
+				"useConst": "warn",
+				"useTemplate": "off",
+				"useSingleVarDeclarator": "off"
+			},
+			"nursery": {
+				"noExtraSemicolons": "off"
+			}
+		}
+	}
+}

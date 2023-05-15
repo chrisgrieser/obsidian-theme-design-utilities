@@ -1,7 +1,6 @@
 import { MarkdownView, Notice, Plugin } from "obsidian";
 
 // add type safety for the undocumented methods
-/* eslint-disable no-unused-vars */
 declare module "obsidian" {
 	interface App {
 		isMobile: () => boolean;
@@ -28,7 +27,14 @@ declare module "obsidian" {
 		getConfig: (config: string) => string;
 	}
 }
-/* eslint-enable no-unused-vars */
+
+// https://www.electronjs.org/docs/latest/api/web-contents#contentsopendevtoolsoptions
+declare const electronWindow: {
+	openDevTools: () => void;
+	toggleDevTools: () => void;
+};
+
+//──────────────────────────────────────────────────────────────────────────────
 
 export default class themeDesignUtilities extends Plugin {
 	styleEl: HTMLElement;
@@ -43,11 +49,10 @@ export default class themeDesignUtilities extends Plugin {
 			name: "Freeze Obsidian (with " + freezeDelaySecs.toString() + "s delay)",
 			callback: () => {
 				new Notice("Will freeze Obsidian in " + freezeDelaySecs.toString() + "s", (freezeDelaySecs - 1) * 1000);
-				// https://www.electronjs.org/docs/latest/api/web-contents#contentsopendevtoolsoptions
-				// @ts-ignore, no idea how to declare electronWindow 🙈
 				electronWindow.openDevTools(); // devtools are required for the debugger to work
 				setTimeout(() => {
-					debugger; /* eslint-disable-line no-debugger */
+					// rome-ignore lint/suspicious/noDebugger: needed for freeze command here
+					debugger;
 				}, freezeDelaySecs * 1000);
 			},
 		});
@@ -55,7 +60,6 @@ export default class themeDesignUtilities extends Plugin {
 		this.addCommand({
 			id: "toggle-devtools",
 			name: "Toggle Devtools",
-			// @ts-ignore, no idea how to declare electronWindow 🙈
 			callback: () => electronWindow.toggleDevTools(), // devtools are required for the debugger to work,
 		});
 
