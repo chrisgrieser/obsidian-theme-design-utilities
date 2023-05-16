@@ -12,12 +12,9 @@
 			"electronWindow"
 		]
 	},
-	"files": {
-		"ignore": [
-			"main.js",
-			"dist/**",
-			"node_modules/**"
-		]
+	"vcs": {
+		"enabled": true,
+		"clientKind": "git"
 	},
 	"organizeImports": {
 		"enabled": true
@@ -26,14 +23,14 @@
 		"enabled": true,
 		"rules": {
 			"all": true,
+			"nursery": {
+				"all": false
+			},
 			"style": {
 				"useBlockStatements": "off",
 				"useConst": "warn",
 				"useTemplate": "off",
 				"useSingleVarDeclarator": "off"
-			},
-			"nursery": {
-				"noExtraSemicolons": "off"
 			}
 		}
 	}
