@@ -1,12 +1,10 @@
 # Theme Design Utilities
-
 ![Obsidian Downloads](https://img.shields.io/badge/dynamic/json?logo=obsidian&color=%23483699&label=downloads&query=%24%5B%22obsidian-theme-design-utilities%22%5D.downloads&url=https%3A%2F%2Fraw.githubusercontent.com%2Fobsidianmd%2Fobsidian-releases%2Fmaster%2Fcommunity-plugin-stats.json&style=plastic) ![](https://img.shields.io/github/v/release/chrisgrieser/obsidian-theme-design-utilities?label=Latest%20Release&style=plastic) [![](https://img.shields.io/badge/changelog-click%20here-FFE800?style=plastic)](Changelog.md)
 
 Some utilities and Quality-of-Life features for designers of [Obsidian](https://obsidian.md/) themes.
 
-## Table of Content
-<!--toc:start-->
-- [Table of Content](#table-of-content)
+<!-- toc -->
+
 - [Commands Added](#commands-added)
   - [Mobile Emulation](#mobile-emulation)
   - [Cycle between All Three Modes](#cycle-between-all-three-modes)
@@ -30,10 +28,8 @@ Some utilities and Quality-of-Life features for designers of [Obsidian](https://
 - [Installation](#installation)
 - [Contribute](#contribute)
 - [About the Developer](#about-the-developer)
-  - [Profiles](#profiles)
-  - [Buy me a Coffee](#buy-me-a-coffee)
-<!--toc:end-->
 
+<!-- toc stop -->
 
 ## Commands Added
 
@@ -154,8 +150,6 @@ eslint --fix *.ts
 ## About the Developer
 In my day job, I am a sociologist studying the social mechanisms underlying the digital economy. For my PhD project, I investigate the governance of the app economy and how software ecosystems manage the tension between innovation and compatibility. If you are interested in this subject, feel free to get in touch.
 
-<!-- markdown-link-check-disable -->
-### Profiles
 - [Academic Website](https://chris-grieser.de/)
 - [ResearchGate](https://www.researchgate.net/profile/Christopher-Grieser)
 - [Discord](https://discordapp.com/users/462774483044794368/)
@@ -163,5 +157,4 @@ In my day job, I am a sociologist studying the social mechanisms underlying the 
 - [Twitter](https://twitter.com/pseudo_meta)
 - [LinkedIn](https://www.linkedin.com/in/christopher-grieser-ba693b17a/)
 
-### Buy me a Coffee
 <a href='https://ko-fi.com/Y8Y86SQ91' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://cdn.ko-fi.com/cdn/kofi1.png?v=3' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
