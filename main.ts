@@ -48,8 +48,15 @@ export default class themeDesignUtilities extends Plugin {
 			id: "freeze-obsidian",
 			name: "Freeze Obsidian (with " + freezeDelaySecs.toString() + "s delay)",
 			callback: () => {
-				new Notice("Will freeze Obsidian in " + freezeDelaySecs.toString() + "s", (freezeDelaySecs - 1) * 1000);
+				const freezeNotice = new Notice("⚠ Will freeze Obsidian in " + freezeDelaySecs.toString() + "s", (freezeDelaySecs - .2) * 1000);
+        let passSecs = 0;
 				electronWindow.openDevTools(); // devtools are required for the debugger to work
+
+        setInterval(() => {
+          freezeNotice.setMessage("⚠ Will freeze Obsidian in " + (freezeDelaySecs - passSecs).toString().slice(0, 3) + "s");
+          passSecs += 0.1;
+        }, 100);
+        
 				setTimeout(() => {
 					// rome-ignore lint/suspicious/noDebugger: needed for freeze command here
 					debugger;
