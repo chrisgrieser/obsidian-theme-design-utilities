@@ -1,0 +1,23 @@
+#!/usr/bin/env zsh
+# vim: filetype=sh
+#───────────────────────────────────────────────────────────────────────────────
+
+# INFO block commit if there are any issues reported
+set -o errexit
+
+echo "Pre-Commit Hook"
+
+echo "(1/4) Biome"
+npx biome check --log-kind="compact" "$(git rev-parse --show-toplevel)"
+
+echo "(2/4) TypeScript"
+npx tsc --noEmit --skipLibCheck --strict
+echo "Done."
+
+echo "(3/4) esbuild"
+node esbuild.config.mjs
+
+echo "(4/4) Markdownlint"
+npx markdownlint --ignore="node_modules" "$(git rev-parse --show-toplevel)"
+echo "Done."
+echo

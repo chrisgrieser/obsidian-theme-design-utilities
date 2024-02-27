@@ -48,15 +48,22 @@ export default class themeDesignUtilities extends Plugin {
 			id: "freeze-obsidian",
 			name: "Freeze Obsidian (with " + freezeDelaySecs.toString() + "s delay)",
 			callback: () => {
-				const freezeNotice = new Notice("⚠ Will freeze Obsidian in " + freezeDelaySecs.toString() + "s", (freezeDelaySecs - .2) * 1000);
-        let passSecs = 0;
+				const freezeNotice = new Notice(
+					"⚠ Will freeze Obsidian in " + freezeDelaySecs.toString() + "s",
+					(freezeDelaySecs - 0.2) * 1000,
+				);
+				let passSecs = 0;
 				electronWindow.openDevTools(); // devtools are required for the debugger to work
 
-        setInterval(() => {
-          freezeNotice.setMessage("⚠ Will freeze Obsidian in " + (freezeDelaySecs - passSecs).toString().slice(0, 3) + "s");
-          passSecs += 0.1;
-        }, 100);
-        
+				setInterval(() => {
+					freezeNotice.setMessage(
+						"⚠ Will freeze Obsidian in " +
+							(freezeDelaySecs - passSecs).toString().slice(0, 3) +
+							"s",
+					);
+					passSecs += 0.1;
+				}, 100);
+
 				setTimeout(() => {
 					// rome-ignore lint/suspicious/noDebugger: needed for freeze command here
 					debugger;
@@ -73,7 +80,8 @@ export default class themeDesignUtilities extends Plugin {
 		this.addCommand({
 			id: "test-notice",
 			name: "Test Notice",
-			callback: () => new Notice("I am a test notice. 👋 \n\nI will stay here until you click me.", 0),
+			callback: () =>
+				new Notice("I am a test notice. 👋 \n\nI will stay here until you click me.", 0),
 		});
 
 		this.addCommand({
@@ -95,7 +103,9 @@ export default class themeDesignUtilities extends Plugin {
 			id: "color-playground",
 			name: "Open GitHub Folder with Color Playground files to download",
 			callback: () =>
-				window.open("https://github.com/chrisgrieser/obsidian-theme-design-utilities/tree/main/color-playground"),
+				window.open(
+					"https://github.com/chrisgrieser/obsidian-theme-design-utilities/tree/main/color-playground",
+				),
 		});
 
 		this.addCommand({
@@ -156,7 +166,10 @@ export default class themeDesignUtilities extends Plugin {
 
 	cycleThemes() {
 		const currentTheme = this.app.customCss.theme;
-		const installedThemes = [...Object.keys(this.app.customCss.themes), ...this.app.customCss.oldThemes];
+		const installedThemes = [
+			...Object.keys(this.app.customCss.themes),
+			...this.app.customCss.oldThemes,
+		];
 		if (installedThemes.length === 0) {
 			new Notice("Cannot cycle themes since no community theme is installed.");
 			return;

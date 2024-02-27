@@ -1,4 +1,0 @@
-- 2023-12-02	release 0.21.2
-- 2023-12-02	chore: update release & config files
-- 2023-12-02	chore: add support for `HelpMate`
-- 2023-12-02	style: lint manifest.json

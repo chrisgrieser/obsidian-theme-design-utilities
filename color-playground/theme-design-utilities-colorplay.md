@@ -3,7 +3,7 @@ date: 2022-10-11
 cssClass: "theme-design-utilities-colorplay"
 ---
 
-## This note let you play with colors!
+## This note let you play with colors
 
 You can change the colors with the [Style Settings plugin](https://github.com/mgmeyers/obsidian-style-settings).
 
