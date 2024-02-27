@@ -1,73 +1,24 @@
 import { MarkdownView, Notice, Plugin } from "obsidian";
 
-// add type safety for the undocumented methods
-declare module "obsidian" {
-	interface App {
-		isMobile: () => boolean;
-		emulateMobile: (toggle: boolean) => void;
-		setTheme: (mode: string) => void; // dark mode
-		customCss: {
-			setTheme: (theme: string) => void; // sets theme
-			theme: string; // get current theme
-			themes: unknown[]; // get installed themes
-			oldThemes: string[]; // get legacy themes (prior to 0.16)
-		};
-		dom: {
-			appContainerEl: {
-				addClass: (cssclass: string) => void;
-				classList: {
-					value: string;
-				};
-				removeClass: (cssclass: string) => void;
-			};
-		};
-	}
-	interface Vault {
-		setConfig: (config: string, newValue: string) => void;
-		getConfig: (config: string) => string;
-	}
-}
-
 // https://www.electronjs.org/docs/latest/api/web-contents#contentsopendevtoolsoptions
 declare const electronWindow: {
 	openDevTools: () => void;
 	toggleDevTools: () => void;
 };
-
 //──────────────────────────────────────────────────────────────────────────────
 
-export default class themeDesignUtilities extends Plugin {
-	styleEl: HTMLElement;
+export default class ThemeDesignUtilities extends Plugin {
+	styleEl: HTMLElement | undefined;
 
-	async onload() {
+	override async onload() {
 		console.log("Theme Design Utilities Plugin loaded.");
-		const freezeDelaySecs = 4;
-		const versionInfoNoticeDuration = 7;
 
+		const freezeDelaySecs = 4; // CONFIG
 		this.addCommand({
 			id: "freeze-obsidian",
 			name: "Freeze Obsidian (with " + freezeDelaySecs.toString() + "s delay)",
 			callback: () => {
-				const freezeNotice = new Notice(
-					"⚠ Will freeze Obsidian in " + freezeDelaySecs.toString() + "s",
-					(freezeDelaySecs - 0.2) * 1000,
-				);
-				let passSecs = 0;
-				electronWindow.openDevTools(); // devtools are required for the debugger to work
-
-				setInterval(() => {
-					freezeNotice.setMessage(
-						"⚠ Will freeze Obsidian in " +
-							(freezeDelaySecs - passSecs).toString().slice(0, 3) +
-							"s",
-					);
-					passSecs += 0.1;
-				}, 100);
-
-				setTimeout(() => {
-					// rome-ignore lint/suspicious/noDebugger: needed for freeze command here
-					debugger;
-				}, freezeDelaySecs * 1000);
+				this.freezeTimer(freezeDelaySecs);
 			},
 		});
 
@@ -147,24 +98,50 @@ export default class themeDesignUtilities extends Plugin {
 		this.addCommand({
 			id: "version-info",
 			name: "CSS Feature Compatibility / Tech Stack Versions",
-			callback: () => {
-				const chromeVersion = process.versions.chrome.split(".")[0];
-				const nodeVersion = process.versions.node.split(".")[0];
-				const electronVersion = process.versions.electron.split(".")[0];
-				new Notice(
-					`Chrome Version: ${chromeVersion}\nNode Version: ${nodeVersion}\nElectron Version: ${electronVersion}`,
-					versionInfoNoticeDuration * 1000,
-				);
-			},
+			callback: () => this.versionInfo(),
 		});
 	}
 
-	async onunload() {
+	override onunload(): void {
 		console.log("Theme Design Utilities Plugin unloaded.");
 		this.app.dom.appContainerEl.removeClass("foobar");
 	}
 
-	cycleThemes() {
+	//───────────────────────────────────────────────────────────────────────────
+
+	versionInfo(): void {
+		// @ts-ignore
+		const chromeVersion = process.versions.chrome?.split(".")[0];
+		const nodeVersion = process.versions.node.split(".")[0];
+		// @ts-ignore
+		const electronVersion = process.versions.electron?.split(".")[0];
+		const msg = [
+			`Chrome Version: ${chromeVersion}`,
+			`Node Version: ${nodeVersion}`,
+			`Electron Version: ${electronVersion}`,
+		].join("\n");
+		new Notice(msg, 7 * 1000);
+	}
+
+	freezeTimer(delay: number): void {
+		const freezeNotice = new Notice(`⚠ Will freeze Obsidian in ${delay}s`, (delay - 0.2) * 1000);
+		electronWindow.openDevTools(); // devtools open needed for the debugger to work
+
+		let passSecs = 0;
+		const timer = setInterval(() => {
+			const timePassed = (delay - passSecs).toFixed(1);
+			freezeNotice.setMessage(`⚠ Will freeze Obsidian in ${timePassed}s`);
+			passSecs += 0.1;
+		}, 100);
+
+		setTimeout(() => {
+			// biome-ignore lint/suspicious/noDebugger: actual feature
+			debugger;
+			clearInterval(timer);
+		}, delay * 1000);
+	}
+
+	cycleThemes(): void {
 		const currentTheme = this.app.customCss.theme;
 		const installedThemes = [
 			...Object.keys(this.app.customCss.themes),
@@ -176,28 +153,29 @@ export default class themeDesignUtilities extends Plugin {
 		}
 
 		installedThemes.push(""); // "" = default theme
-
-		let indexOfNextTheme = installedThemes.indexOf(currentTheme) + 1;
-		if (indexOfNextTheme === installedThemes.length) indexOfNextTheme = 0;
+		const indexOfNextTheme = (installedThemes.indexOf(currentTheme) + 1) % installedThemes.length;
 
 		const nextTheme = installedThemes[indexOfNextTheme];
+		if (!nextTheme) return;
 		this.app.customCss.setTheme(nextTheme);
 	}
 
-	toggleDarkMode() {
+	toggleDarkMode(): void {
 		const isDarkMode = this.app.vault.getConfig("theme") === "obsidian";
+		const lightTheme = "moonstone";
+		const darkTheme = "obsidian";
 		if (isDarkMode) {
-			this.app.setTheme("moonstone");
-			this.app.vault.setConfig("theme", "moonstone");
+			this.app.setTheme(lightTheme);
+			this.app.vault.setConfig("theme", lightTheme);
 			this.app.workspace.trigger("css-change");
 		} else {
-			this.app.setTheme("obsidian");
-			this.app.vault.setConfig("theme", "obsidian");
+			this.app.setTheme(darkTheme);
+			this.app.vault.setConfig("theme", darkTheme);
 			this.app.workspace.trigger("css-change");
 		}
 	}
 
-	cycleViews() {
+	cycleViews(): void {
 		const noticeDuration = 2000;
 
 		const isMarkdownView = this.app.workspace.getActiveViewOfType(MarkdownView);
@@ -206,13 +184,18 @@ export default class themeDesignUtilities extends Plugin {
 			return;
 		}
 
-		const activePane = this.app.workspace.activeLeaf;
-		const currentView = activePane.getViewState(); // won't be null since MarkdownView has been confirmed above
+		const activePane = this.app.workspace.getLeaf();
+		if (!activePane) {
+			new Notice("Not a regular note or no file open.");
+			return;
+		}
+		const currentView = activePane.getViewState();
 
 		let currentMode: string;
 		if (currentView.state.mode === "preview") currentMode = "preview";
-		if (currentView.state.mode === "source" && currentView.state.source) currentMode = "source";
-		if (currentView.state.mode === "source" && !currentView.state.source) currentMode = "live";
+		else if (currentView.state.mode === "source" && currentView.state.source)
+			currentMode = "source";
+		else currentMode = "live";
 
 		const newMode = currentView;
 		switch (currentMode) {
@@ -226,17 +209,16 @@ export default class themeDesignUtilities extends Plugin {
 				newMode.state.source = false;
 				new Notice("Now: Live Preview", noticeDuration);
 				break;
-			case "live":
+			default:
 				newMode.state.mode = "preview";
 				new Notice("Now: Reading Mode", noticeDuration);
-				break;
 		}
 
 		activePane.setViewState(newMode);
 	}
 
-	// thanks @NothingIsLost
-	toggleDebuggingCSS() {
+	// thanks to @NothingIsLost for this
+	toggleDebuggingCSS(): void {
 		const currentCSS = this.styleEl?.textContent;
 		let cssToApply = "";
 
@@ -245,14 +227,13 @@ export default class themeDesignUtilities extends Plugin {
 			this.styleEl = document.createElement("style");
 			this.styleEl.setAttribute("type", "text/css");
 			document.head.appendChild(this.styleEl);
-			this.register(() => this.styleEl.detach());
+			this.register(() => this.styleEl?.detach());
 		}
-
-		this.styleEl.textContent = cssToApply;
+		if (this.styleEl) this.styleEl.textContent = cssToApply;
 		this.app.workspace.trigger("css-change");
 	}
 
-	toggleGarbleText() {
+	toggleGarbleText(): void {
 		const currentCSS = this.styleEl?.textContent;
 		let cssToApply = "";
 
@@ -261,14 +242,14 @@ export default class themeDesignUtilities extends Plugin {
 			this.styleEl = document.createElement("style");
 			this.styleEl.setAttribute("type", "text/css");
 			document.head.appendChild(this.styleEl);
-			this.register(() => this.styleEl.detach());
+			this.register(() => this.styleEl?.detach());
 		}
 
-		this.styleEl.textContent = cssToApply;
+		if (this.styleEl) this.styleEl.textContent = cssToApply;
 		this.app.workspace.trigger("css-change");
 	}
 
-	toggleTestClass() {
+	toggleTestClass(): void {
 		const foobarActive = this.app.dom.appContainerEl.classList.value.includes("foobar");
 		if (foobarActive) this.app.dom.appContainerEl.removeClass("foobar");
 		else this.app.dom.appContainerEl.addClass("foobar");
