@@ -1,27 +1,31 @@
 {
-	"$schema": "https://raw.githubusercontent.com/biomejs/biome/main/editors/vscode/configuration_schema.json",
+	"$schema": "https://raw.githubusercontent.com/biomejs/biome/main/packages/%40biomejs/biome/configuration_schema.json",
+	"files": {
+		"include": ["*.json", "src/**/*.ts"]
+	},
+	"json": {
+		"parser": { "allowComments": true }
+	},
 	"formatter": {
-		"lineWidth": 105,
+		"lineWidth": 100,
 		"indentStyle": "tab",
 		"indentWidth": 3,
 		"formatWithErrors": true
 	},
-	"javascript": {
-		"globals": ["ObjC", "Application", "delay", "Path", "$"]
+	"organizeImports": {
+		"enabled": false
 	},
 	"linter": {
 		"rules": {
 			"all": true,
+			"nursery": { "useImportType": "off" },
 			"suspicious": { "noConsoleLog": "off" },
 			"complexity": { "noExcessiveCognitiveComplexity": "off" },
 			"style": {
 				"useTemplate": "off",
 				"noParameterAssign": "off",
 				"useSingleVarDeclarator": "off",
-				"useNamingConvention": {
-					"level": "warn",
-					"options": { "strictCase": false }
-				}
+				"useNamingConvention": { "level": "warn", "options": { "strictCase": false } }
 			}
 		}
 	}
