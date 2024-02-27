@@ -156,7 +156,7 @@ export default class ThemeDesignUtilities extends Plugin {
 		const indexOfNextTheme = (installedThemes.indexOf(currentTheme) + 1) % installedThemes.length;
 
 		const nextTheme = installedThemes[indexOfNextTheme];
-		if (!nextTheme) return;
+		if (nextTheme === undefined) return;
 		this.app.customCss.setTheme(nextTheme);
 	}
 
