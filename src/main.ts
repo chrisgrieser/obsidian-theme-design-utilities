@@ -9,16 +9,16 @@ declare const electronWindow: {
 
 export default class ThemeDesignUtilities extends Plugin {
 	styleEl: HTMLElement | undefined;
+	freezeDelaySecs = 4; // CONFIG
 
 	override async onload() {
 		console.log("Theme Design Utilities Plugin loaded.");
 
-		const freezeDelaySecs = 4; // CONFIG
 		this.addCommand({
 			id: "freeze-obsidian",
-			name: "Freeze Obsidian (with " + freezeDelaySecs.toString() + "s delay)",
+			name: "Freeze Obsidian (with " + this.freezeDelaySecs.toString() + "s delay)",
 			callback: () => {
-				this.freezeTimer(freezeDelaySecs);
+				this.freezeTimer(this.freezeDelaySecs);
 			},
 		});
 
