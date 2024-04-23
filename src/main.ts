@@ -110,10 +110,10 @@ export default class ThemeDesignUtilities extends Plugin {
 	//───────────────────────────────────────────────────────────────────────────
 
 	versionInfo(): void {
-		// @ts-ignore
+		// @ts-expect-error
 		const chromeVersion = process.versions.chrome?.split(".")[0];
 		const nodeVersion = process.versions.node.split(".")[0];
-		// @ts-ignore
+		// @ts-expect-error
 		const electronVersion = process.versions.electron?.split(".")[0];
 		const msg = [
 			`Chrome Version: ${chromeVersion}`,
