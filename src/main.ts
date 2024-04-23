@@ -5,14 +5,16 @@ declare const electronWindow: {
 	openDevTools: () => void;
 	toggleDevTools: () => void;
 };
+
 //──────────────────────────────────────────────────────────────────────────────
 
+// biome-ignore lint/style/noDefaultExport: needed for Obsidian plugins
 export default class ThemeDesignUtilities extends Plugin {
 	styleEl: HTMLElement | undefined;
 	freezeDelaySecs = 4; // CONFIG
 
 	override async onload() {
-		console.log("Theme Design Utilities Plugin loaded.");
+		console.info("Theme Design Utilities Plugin loaded.");
 
 		this.addCommand({
 			id: "freeze-obsidian",
@@ -103,7 +105,7 @@ export default class ThemeDesignUtilities extends Plugin {
 	}
 
 	override onunload(): void {
-		console.log("Theme Design Utilities Plugin unloaded.");
+		console.info("Theme Design Utilities Plugin unloaded.");
 		this.app.dom.appContainerEl.removeClass("foobar");
 	}
 
@@ -199,19 +201,22 @@ export default class ThemeDesignUtilities extends Plugin {
 
 		const newMode = currentView;
 		switch (currentMode) {
-			case "preview":
+			case "preview": {
 				newMode.state.mode = "source";
 				newMode.state.source = true;
 				new Notice("Now: Source Mode", noticeDuration);
 				break;
-			case "source":
+			}
+			case "source": {
 				newMode.state.mode = "source";
 				newMode.state.source = false;
 				new Notice("Now: Live Preview", noticeDuration);
 				break;
-			default:
+			}
+			default: {
 				newMode.state.mode = "preview";
 				new Notice("Now: Reading Mode", noticeDuration);
+			}
 		}
 
 		activePane.setViewState(newMode);
