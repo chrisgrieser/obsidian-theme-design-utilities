@@ -1,62 +1,64 @@
 # Theme Design Utilities
-![Obsidian Downloads](https://img.shields.io/badge/dynamic/json?logo=obsidian&color=%23483699&label=downloads&query=%24%5B%22obsidian-theme-design-utilities%22%5D.downloads&url=https%3A%2F%2Fraw.githubusercontent.com%2Fobsidianmd%2Fobsidian-releases%2Fmaster%2Fcommunity-plugin-stats.json&style=plastic)
-![Latest Release](https://img.shields.io/github/v/release/chrisgrieser/obsidian-theme-design-utilities?label=Latest%20Release&style=plastic)
+![Obsidian downloads](https://img.shields.io/badge/dynamic/json?logo=obsidian&color=%23483699&label=downloads&query=%24%5B%22obsidian-theme-design-utilities%22%5D.downloads&url=https%3A%2F%2Fraw.githubusercontent.com%2Fobsidianmd%2Fobsidian-releases%2Fmaster%2Fcommunity-plugin-stats.json&style=plastic)
+![Latest release](https://img.shields.io/github/v/release/chrisgrieser/obsidian-theme-design-utilities?label=Latest%20Release&style=plastic)
 
 Some utilities and Quality-of-Life features for designers of
 [Obsidian](https://obsidian.md/) themes.
 
+## Table of contents
+
 <!-- toc -->
 
-- [Commands Added](#commands-added)
-	* [Mobile Emulation](#mobile-emulation)
-	* [Cycle between All Three Modes](#cycle-between-all-three-modes)
-	* [Cycle through Installed Themes](#cycle-through-installed-themes)
-	* [Light/Dark Mode Toggle](#lightdark-mode-toggle)
-	* [Freeze Obsidian](#freeze-obsidian)
-	* [Toggle Devtools](#toggle-devtools)
-	* [Garble Text](#garble-text)
-	* [`.foobar` Test Class](#foobar-test-class)
-	* [Red Outlines for Debugging](#red-outlines-for-debugging)
-	* [Permanent Test Notice](#permanent-test-notice)
-	* [CSS Feature Compatibility (Chrome Version)](#css-feature-compatibility-chrome-version)
-	* [Show Cheatsheet](#show-cheatsheet)
+- [Commands added](#commands-added)
+	* [Mobile emulation](#mobile-emulation)
+	* [Cycle between all three modes](#cycle-between-all-three-modes)
+	* [Cycle through installed themes](#cycle-through-installed-themes)
+	* [Light/dark mode toggle](#lightdark-mode-toggle)
+	* [Freeze obsidian](#freeze-obsidian)
+	* [Toggle `devtools`](#toggle-devtools)
+	* [Garble text](#garble-text)
+	* [`.foobar` test class](#foobar-test-class)
+	* [Red outlines for debugging](#red-outlines-for-debugging)
+	* [Permanent test notice](#permanent-test-notice)
+	* [CSS feature compatibility (chrome version)](#css-feature-compatibility-chrome-version)
+	* [Show cheatsheet](#show-cheatsheet)
 - [Documentation and sample notes](#documentation-and-sample-notes)
 	* [Cheatsheets](#cheatsheets)
 	* [Markdown note: display your current theme colors](#markdown-note-display-your-current-theme-colors)
 	* [Markdown note and CSS snippet: play with colors](#markdown-note-and-css-snippet-play-with-colors)
-- [Other Resources for Obsidian Theme Designers](#other-resources-for-obsidian-theme-designers)
-	* [Obsidian Plugins](#obsidian-plugins)
+- [Other resources for Obsidian theme designers](#other-resources-for-obsidian-theme-designers)
+	* [Obsidian plugins](#obsidian-plugins)
 	* [Guides](#guides)
 - [Installation](#installation)
-- [About the Developer](#about-the-developer)
+- [About the developer](#about-the-developer)
 
 <!-- tocstop -->
 
-## Commands Added
+## Commands added
 
-### Mobile Emulation
+### Mobile emulation
 Conveniently enable the mobile emulation of Obsidian, that is how Obsidian would
 look on mobile. This helps with styling your theme for mobile.
 
-### Cycle between All Three Modes
+### Cycle between all three modes
 Cycles between Source Mode, Live Preview, and Reading Mode. Set a hotkey to
 quickly check how the theme looks in all three view modes.
 
-### Cycle through Installed Themes
+### Cycle through installed themes
 Cycles between all installed themes. As opposed to the Theme Switcher Plugin,
 this does not open a modal, but rather directly switches to the next installed
 theme.
 
 <img width=60% alt="Theme Cycling Demo" src="demo/theme-cycler.gif">
 
-### Light/Dark Mode Toggle
+### Light/dark mode toggle
 A simple command to toggle between light and dark mode. Set a hotkey to quickly
 change the mode of the theme.
 
 <img alt="Dark Mode Toggle Demo" width=60% src="https://user-images.githubusercontent.com/73286100/148293043-c16e8d32-489d-4f14-9b26-9d00c6a83901.gif">
 
-### Freeze Obsidian
-Opens the devtools and freeze interaction with Obsidian, after a small delay.
+### Freeze obsidian
+Opens the `devtools` and freeze interaction with Obsidian, after a small delay.
 During that delay, you can create fleeting elements like context menus or
 tooltips which stays on screen.
 
@@ -64,16 +66,16 @@ To unfreeze Obsidian, click the "play" button which appears at the top of Obsidi
 
 <img alt="freezing Obsidian Demo" width=25% src="https://user-images.githubusercontent.com/73286100/144731519-2f64352e-5264-45c3-bb3c-eb05c56a8322.png">
 
-### Toggle Devtools
-Opens/closes the devtools (developer console). Does the same thing as Obsidian's
-built-in method of opening the devtools, but being available in the command
+### Toggle `devtools`
+Opens/closes the `devtools` (developer console). Does the same thing as Obsidian's
+built-in method of opening the `devtools`, but being available in the command
 palette allows you to set a custom hotkey for it.
 
-### Garble Text
+### Garble text
 Garbles all text in the whole app. "Ungarbles" elements that are hovered. This
 way you can share screenshots while maintaining privacy.
 
-### `.foobar` Test Class
+### `.foobar` test class
 This command adds/removes a test class `.foobar` to the DOM-element
 `.app-container`. This way you can quickly toggle some CSS on-and-off for
 debugging purposes, without having to enable/disable a snippet.
@@ -84,18 +86,18 @@ debugging purposes, without having to enable/disable a snippet.
 }
 ```
 
-### Red Outlines for Debugging
+### Red outlines for debugging
 Add red outlines to all elements. Run the command again to remove the outlines.
 The outlines are useful for debugging purposes, [essentially serving as the CSS
 equivalent for `console.log()`](https://www.youtube.com/shorts/ii-lSK2_Nu4).
 
-### Permanent Test Notice
+### Permanent test notice
 Post a notice (notification) that stays on screen until you click it. This is
 useful for styling notices, as they normally quickly fade away.
 
 <img width=40% alt="Screenshot 2022-01-05 22 28 09" src="https://user-images.githubusercontent.com/73286100/148292139-86847227-5048-41e4-a6dc-768e4b54728b.png">
 
-### CSS Feature Compatibility (Chrome Version)
+### CSS feature compatibility (chrome version)
 - Displays a notice with the current Chrome version utilized by Obsidian to
   render CSS. Sites like [MDN](https://developer.mozilla.org/en-US/) or
   [W3-Schools](https://www.w3schools.com/cssref/css3_pr_overflow-y.asp) usually
@@ -125,7 +127,7 @@ and add this to your `.stylelintrc.json`:
 }
 ```
 
-### Show Cheatsheet
+### Show cheatsheet
 Open a cheat sheet showing the Obsidian CSS classes.
 
 <img src="./cheatsheets/css-classes.png" alt="Obsidian API Model" width=40%>
@@ -157,9 +159,9 @@ plugin](https://github.com/mgmeyers/obsidian-style-settings).
 <img src="./demo/color-playground_note-colorplay-screenshot.png" alt="colorplay
 colors note, screenshot" width=40%>
 
-## Other Resources for Obsidian Theme Designers
+## Other resources for Obsidian theme designers
 
-### Obsidian Plugins
+### Obsidian plugins
 - [My Snippets](https://github.com/chetachiezikeuzor/MySnippets-Plugin)
 - [Theme Picker](https://github.com/kenset/obsidian-theme-picker)
 - [Print Preview](https://github.com/nothingislost/obsidian-print-preview) (unlisted)
@@ -177,18 +179,15 @@ colors note, screenshot" width=40%>
 This plugin is available in Obsidian's Community Plugin Browser: `Settings` →
 `Community Plugins` → `Browse` → Search for *"Theme Design Utilities"*
 
-<!-- vale Google.FirstPerson = NO -->
-## About the Developer
+## About the developer
 In my day job, I am a sociologist studying the social mechanisms underlying the
 digital economy. For my PhD project, I investigate the governance of the app
 economy and how software ecosystems manage the tension between innovation and
 compatibility. If you are interested in this subject, feel free to get in touch.
 
-- [Academic Website](https://chris-grieser.de/)
+- [Website](https://chris-grieser.de/)
+- [Mastodon](https://pkm.social/@pseudometa)
 - [ResearchGate](https://www.researchgate.net/profile/Christopher-Grieser)
-- [Discord](https://discordapp.com/users/462774483044794368/)
-- [GitHub](https://github.com/chrisgrieser/)
-- [Twitter](https://twitter.com/pseudo_meta)
 - [LinkedIn](https://www.linkedin.com/in/christopher-grieser-ba693b17a/)
 
 <a href='https://ko-fi.com/Y8Y86SQ91' target='_blank'><img height='36'
