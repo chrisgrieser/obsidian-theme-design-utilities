@@ -179,6 +179,13 @@ colors note, screenshot" width=40%>
 This plugin is available in Obsidian's Community Plugin Browser: `Settings` →
 `Community Plugins` → `Browse` → Search for *"Theme Design Utilities"*
 
+## Build
+
+```bash
+npm install
+node .esbuild.mjs
+```
+
 ## About the developer
 In my day job, I am a sociologist studying the social mechanisms underlying the
 digital economy. For my PhD project, I investigate the governance of the app
