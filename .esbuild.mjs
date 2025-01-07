@@ -22,7 +22,7 @@ const result = await esbuild
 		target: "es2022",
 		sourcemap: production || analyze ? false : "inline",
 		minify: production || analyze,
-		drop: ["debugger"],
+		drop: [], // not dropping `debugger` since required for this plugin to work
 		treeShaking: true,
 		logLevel: analyze ? "silent" : "info",
 		metafile: analyze,
