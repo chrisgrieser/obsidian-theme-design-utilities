@@ -1,6 +1,6 @@
 {
 	"name": "obsidian-theme-design-utilities",
-	"version": "0.22.3",
+	"version": "0.22.4",
 	"description": "Some utilities and Quality-of-Life features for designers of Obsidian themes.",
 	"author": "Chris Grieser",
 	"main": "main.js",
